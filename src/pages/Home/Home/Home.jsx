@@ -1,9 +1,10 @@
+import PartTwo from "../PartTwo/PartTwo";
 
 
 const Home = () => {
     return (
         <div>
-            This Is Home
+            <PartTwo></PartTwo>
         </div>
     );
 };
