@@ -35,7 +35,7 @@ const PartTwo = () => {
                         <div className="swssrelative">
                             <img src="/public/Razib/about-me-avt.jpg" alt="About me avatar" />
                         </div>
-                        <div className="font-bold text-lg swssabsolute rounded-lg bg-white p-4 shadow-lg w-60 -mt-60 sm:ms-96 ms-1">
+                        <div className="font-bold text-lg swssabsolute rounded-lg bg-white p-4 shadow-lg w-60 sm:-mt-[390px] -mt-60 sm:ms-96 ms-1">
                             <div className="flex items-center">
                                 <div>
                                    
@@ -43,14 +43,14 @@ const PartTwo = () => {
                                 <div className="ml-2">CONTACT ME NOW</div>
                             </div>
                         </div>
-                        <div className="bg-white swssabsolute rounded-lg -mt-44 p-4 text-slate-700 shadow-lg w-60 sm:ms-96 ms-24">
+                        <div className="bg-white swssabsolute rounded-lg sm:-mt-[320px] -mt-44 p-4 text-slate-700 shadow-lg w-60 sm:ms-96 ms-24">
                         <div className="flex items-center">
                                 <div>
                                     <img className="w-7" src={phone} alt="phone" />
                                 </div>
                                 <div className="ml-2">(04) 3245-6988</div>
                             </div></div>
-                        <div className="bg-white swssabsolute rounded-lg -mt-28 p-4 text-slate-700 shadow-lg w-60 sm:ms-96 ms-1">
+                        <div className="bg-white swssabsolute rounded-lg -mt-28 p-4 text-slate-700 sm:-mt-[250px] shadow-lg w-60  sm:ms-96 ms-1">
                         <div className="flex items-center">
                                 <div>
                                     <img className="w-7" src={mail} alt="phone" />
@@ -58,7 +58,7 @@ const PartTwo = () => {
                                 <div className="ml-2 text-sm">support@constructor.com</div>
                             </div>
                         </div>
-                        <div className="bg-white swssabsolute  rounded-lg p-4 text-slate-700 shadow-lg w-60 sm:ms-96 ms-20 -mt-12">
+                        <div className="bg-white swssabsolute  rounded-lg p-4 text-slate-700 shadow-lg w-60 sm:ms-96 sm:-mt-[180px] ms-20 -mt-12">
                             
                             <div className="flex items-center">
                                 <div>
