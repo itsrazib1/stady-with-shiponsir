@@ -22,8 +22,8 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className='  flex  bg-white'>
-      <div className=' top-3 w-full'>
+    <nav className=' relative  flex  bg-white'>
+      <div className='absolute top-3 w-full'>
 
         <div className="hidden md:block bg-white ">
           <div className="flex relative py-4 md:py-4 md:px-6 ">
@@ -33,16 +33,16 @@ const Navbar = () => {
 
             </div>
             <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
-              <a href="/">Home</a>
-              <a href="/about">Event </a>
-              <a href="/about">Page </a>
-              <a href="/blogs">Blog</a>
-              <a href="/blogs">Courses</a>
+              <a className="hover:text-blue-400" href="/">Home</a>
+              <a className="hover:text-blue-400" href="/about">Event </a>
+              <a className="hover:text-blue-400" href="/about">Page </a>
+              <a className="hover:text-blue-400" href="/blogs">Blog</a>
+              <a className="hover:text-blue-400" href="/blogs">Courses</a>
             </div>
 
-            <div className="md:flex absolute  right-0 mt-4 gap-12 text-xl">
+            <div className="md:flex absolute z-50  right-16 mt-4 gap-12 text-xl">
               <div className="flex items-center gap-2">
-                <CiUser /> <span><a href="/about">Register </a> <span>/</span> <a href="/blogs">Login</a></span>
+                <CiUser /> <span><a className="hover:text-blue-400" href="/about">Register </a> <span>/</span> <a className="hover:text-blue-400" href="/blogs">Login</a></span>
               </div>
               <button type="button" className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center ">
                 buy now
@@ -86,28 +86,28 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
 
                   </div>
                   <div className="text-xl">
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://"> Home</a>
 
                     </div>
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://"> Event</a>
                     </div>
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://"> Page</a>
                     </div>
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://"> Block</a>
                     </div>
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://"> courses</a>
                     </div>
                   </div>
                   <div className="mt-4 text-xl">
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://">Register</a>
                     </div>
-                    <div>
+                    <div className="hover:text-blue-400">
                       <a href="http://">Login</a>
                     </div>
                   </div>
