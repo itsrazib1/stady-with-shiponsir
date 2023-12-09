@@ -7,11 +7,8 @@ const Home = () => {
     return (
         <div>
             <PartTwo></PartTwo>
-<<<<<<< HEAD
             <PartThree/>
-=======
-            <Partfive></Partfive>
->>>>>>> 36f24cc811ae12de56eaf567b00c6e63ade0b34a
+            <Partfive/>
         </div>
     );
 };
