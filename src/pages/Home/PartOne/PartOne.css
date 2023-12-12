@@ -1,0 +1,9 @@
+.backgroundImg {
+    background-image: url("../../../../public/Razib/wall-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 450px 1000px;
+    background-position: right center;
+    padding-top: 100px;
+
+
+}
