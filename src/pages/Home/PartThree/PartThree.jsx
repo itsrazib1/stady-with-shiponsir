@@ -3,7 +3,7 @@ import './PartThree.css'
 
 const PartThree = () => {
     return (
-        <div className='py-10'>
+        <div className='pb-10'>
             <div className='bgI'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center items-center container mx-auto'>
                     <div className='w-9/12 lg:w-7/12 mx-auto'>

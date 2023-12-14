@@ -1,0 +1,56 @@
+.full-card-style {
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+.card-img-style {
+  transition: 0.5s;
+}
+.card-img-style:hover {
+  transform: scale(1.05, 1.05);
+}
+.full-card-style:hover {
+  color: white;
+  background: linear-gradient(
+    to right,
+    var(--thim-body-primary-color, #04e4c6),
+    var(--thim-button-hover-color, #209dfe)
+  );
+}
+.price-style {
+  background-image: linear-gradient(
+      to right,
+      var(--thim-body-primary-color, #04e4c6),
+      var(--thim-button-hover-color, #209dfe)
+    ),
+    linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.viewAll-btn-link-style {
+  margin-bottom: 100px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.viewAll-btn-link-style a {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #04e4c6, #209dfe) border-box;
+  border-radius: 50em;
+  border: 1px solid transparent;
+  border-radius: 26px;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 13px 40px;
+  transition: 0.5s;
+}
+.viewAll-btn-link-style a:hover {
+  background-image: linear-gradient(
+      to right,
+      var(--thim-body-primary-color, #04e4c6),
+      var(--thim-button-hover-color, #209dfe)
+    ),
+    linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+    color: white;
+}

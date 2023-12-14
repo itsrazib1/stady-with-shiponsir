@@ -1,48 +1,128 @@
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
+import {
+  Drawer,
 
+  Typography,
+
+} from "@material-tailwind/react";
 
 const Navbar = () => {
+
+  const [open, setOpen] = React.useState(false);
+
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div>
-      <div className="navbar bg-base-100 container mx-auto">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    <nav className=' relative  flex  bg-white'>
+      <div className='absolute top-3 w-full'>
+
+        <div className="hidden md:block bg-white ">
+          <div className="flex relative py-4 md:py-4 md:px-6 ">
+
+            <div className="invisible md:visible md:flex text-xl text-sync-400">
+              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Coaching</span>
+
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
+            <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
+              <a className="hover:text-blue-400" href="/">Home</a>
+              <a className="hover:text-blue-400" href="/about">Event </a>
+              <a className="hover:text-blue-400" href="/about">Page </a>
+              <a className="hover:text-blue-400" href="/blogs">Blog</a>
+              <a className="hover:text-blue-400" href="/blogs">Courses</a>
+            </div>
+
+            <div className="md:flex absolute z-50  right-16 mt-4 gap-12 text-xl">
+              <div className="flex items-center gap-2">
+                <CiUser /> <span><a className="hover:text-blue-400" href="/about">Register </a> <span>/</span> <a className="hover:text-blue-400" href="/blogs">Login</a></span>
+              </div>
+              <button type="button" className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center ">
+                buy now
+              </button>
+            </div>
           </div>
-          <a className="btn btn-ghost text-xl">SWSS</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className='md:hidden'>
+          <div className=" ">
+
+
+            <div className="fixed md:hidden md:text-[14px] top-0 h-[50px] md:h-[35px] flex  
+md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg-transparent  ">
+              <div className='-mt-4'>
+                <div className="  md:flex items-center ">
+
+                  <span className="  text-4xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">Coaching</span>
+                </div>
+              </div>
+              <div onClick={handleToggle} className="-mr-2 flex fixed top-0 z-50 right-0 w-full">
+                {isOpen ? (
+                  <button className="w-[50px] flex justify-center items-center absolute top-0 right-0 h-[50px] text-black ">
+                    <FaTimes onClick={openDrawer} className="text-2xl" />
+                  </button>
+                ) : (
+                  <button className="w-[50px] flex justify-center items-center absolute top-0 right-0 h-[50px]  text-black">
+                    <FaBars className="text-black text-2xl" />
+                  </button>
+                )}
+              </div>
+
+              {isOpen && (
+                <Drawer open={open} onClose={closeDrawer} className="p-4">
+                  <div className="mb-6 flex items-center justify-between bg-red-800 px-10 py-6">
+                    <Typography variant="h5" color="blue-gray">
+                      <span className="  text-4xl mt-8 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">Coaching</span>
+                    </Typography>
+
+
+                    <FaTimes onClick={closeDrawer} className="text-2xl text-gray-300" />
+
+                  </div>
+                  <div className="text-xl">
+                    <div className="hover:text-blue-400">
+                      <a href="http://"> Home</a>
+
+                    </div>
+                    <div className="hover:text-blue-400">
+                      <a href="http://"> Event</a>
+                    </div>
+                    <div className="hover:text-blue-400">
+                      <a href="http://"> Page</a>
+                    </div>
+                    <div className="hover:text-blue-400">
+                      <a href="http://"> Block</a>
+                    </div>
+                    <div className="hover:text-blue-400">
+                      <a href="http://"> courses</a>
+                    </div>
+                  </div>
+                  <div className="mt-4 text-xl">
+                    <div className="hover:text-blue-400">
+                      <a href="http://">Register</a>
+                    </div>
+                    <div className="hover:text-blue-400">
+                      <a href="http://">Login</a>
+                    </div>
+                  </div>
+
+                </Drawer>
+              )}
+
+
+            </div>
+
+          </div>
+
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
