@@ -77,7 +77,7 @@ const PartThree = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='absolute bottom-6 lg:bottom-48 w-9/12 mx-auto'>
+                    <div className='absolute bottom-16  lg:bottom-16 w-9/12 mx-auto'>
                         <Count />
                     </div>
                 </div>

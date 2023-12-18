@@ -10,7 +10,7 @@ const Count = () => {
         <ScrollTrigger onEnter={() => setCountOn(true)} onExit={() => setCountOn(false)}>
             {
                 countOn &&
-                <div className="text-center w-full">
+                <div className="text-center  w-full">
 
                     <div className="stat">
                         <div className=" grid grid-cols-2 lg:grid-cols-4 justify-items-center items-center gap-8">
