@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.swssabsolute{
+
+.swssabsolute {
     position: absolute;
 }
-.swssrelative{
+
+.swssrelative {
     position: relative;
 }
