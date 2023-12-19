@@ -7,6 +7,7 @@ import {
   Typography,
 
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -40,9 +41,9 @@ const Navbar = () => {
               <a className="hover:text-blue-400" href="/blogs">Courses</a>
             </div>
 
-            <div className="md:flex absolute z-50  right-16 mt-4 gap-12 text-xl">
+            <div className="md:flex absolute z-50  right-16 gap-12 text-xl">
               <div className="flex items-center gap-2">
-                <CiUser /> <span><a className="hover:text-blue-400" href="/about">Register </a> <span>/</span> <a className="hover:text-blue-400" href="/blogs">Login</a></span>
+                <CiUser /> <span><a className="hover:text-blue-400" href="/register">Register</a> <span>/</span> <a className="hover:text-blue-400" href="/blogs">Login</a></span>
               </div>
               <button type="button" className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center ">
                 buy now
@@ -105,7 +106,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   </div>
                   <div className="mt-4 text-xl">
                     <div className="hover:text-blue-400">
-                      <a href="http://">Register</a>
+                      <Link to="/register">Register</Link>
                     </div>
                     <div className="hover:text-blue-400">
                       <a href="http://">Login</a>

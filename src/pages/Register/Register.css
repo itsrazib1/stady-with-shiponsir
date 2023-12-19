@@ -1,0 +1,6 @@
+.reg-main-body{
+    background: url(../../../public/Ohi/regBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
