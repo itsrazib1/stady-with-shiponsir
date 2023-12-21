@@ -23,7 +23,7 @@ const Navbar = () => {
   };
   return (
     <nav className=' relative  flex  bg-white'>
-      <div className='absolute top-3 w-full'>
+      <div className='absolute top-0 w-full'>
 
         <div className="hidden md:block bg-white ">
           <div className="flex relative py-4 md:py-4 md:px-6 ">
@@ -42,7 +42,7 @@ const Navbar = () => {
 
             <div className="md:flex absolute z-50  right-16 mt-4 gap-12 text-xl">
               <div className="flex items-center gap-2">
-                <CiUser /> <span><a className="hover:text-blue-400" href="/about">Register </a> <span>/</span> <a className="hover:text-blue-400" href="/blogs">Login</a></span>
+                <CiUser /> <span><a className="hover:text-blue-400" href="/about">Register </a> <span>/</span> <a className="hover:text-blue-400" href="/login">Login</a></span>
               </div>
               <button type="button" className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center ">
                 buy now
@@ -108,7 +108,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                       <a href="http://">Register</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://">Login</a>
+                      <a href="/login">Login</a>
                     </div>
                   </div>
 
