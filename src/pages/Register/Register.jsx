@@ -31,7 +31,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="">
-                <label className="text-white font-medium">Father's Name</label>
+                <label className="text-white font-medium">Father Name</label>
                 <div>
                   <input
                     className="info-input"
@@ -44,7 +44,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="">
-                <label className="text-white font-medium">Mother's Name</label>
+                <label className="text-white font-medium">Mother Name</label>
                 <div>
                   <input
                     className="info-input"

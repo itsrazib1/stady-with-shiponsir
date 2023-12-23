@@ -31,7 +31,7 @@ import "./PartOne.css"
 const PartOne = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 container">
-            <div className="flex flex-col items-center justify-center h-screen ms-6 md:ms-16 pt-12 md:pt-32">
+            <div className="flex flex-col items-center justify-center h-screen ms-6 md:ms-16  md:pt-32">
                 <div>
                     <h1 className="text-5xl font-bold">The Best Education <br /> For Your Bright Future</h1>
                     <p className="mt-6 pe-16">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, aperiam quaerat. Porro, dicta ipsam officiis voluptates, consectetur quas et dignissimos delectus veritatis laborum corrupti impedit assumenda similique pariatur in possimus.</p>

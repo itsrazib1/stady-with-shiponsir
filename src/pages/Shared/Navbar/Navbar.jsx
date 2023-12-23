@@ -24,10 +24,10 @@ const Navbar = () => {
   };
   return (
     <nav className=' relative  flex  bg-white'>
-      <div className='absolute top-3 w-full'>
+      <div className='absolute  w-full'>
 
         <div className="hidden md:block bg-white ">
-          <div className="flex relative py-4 md:py-4 md:px-6 ">
+          <div className="flex relative mt-3 md:py-4 md:px-6 ">
 
             <div className="invisible md:visible md:flex text-xl text-sync-400">
               <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Coaching</span>
@@ -52,10 +52,10 @@ const Navbar = () => {
           </div>
         </div>
         <div className='md:hidden'>
-          <div className=" ">
+          <div className="mt-6 ">
 
 
-            <div className="fixed md:hidden md:text-[14px] top-0 h-[50px] md:h-[35px] flex  
+            <div className="fixed md:hidden md:text-[14px] h-[50px] md:h-[35px] flex  
 md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg-transparent  ">
               <div className='-mt-4'>
                 <div className="  md:flex items-center ">
@@ -63,7 +63,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   <span className="  text-4xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">Coaching</span>
                 </div>
               </div>
-              <div onClick={handleToggle} className="-mr-2 flex fixed top-0 z-50 right-0 w-full">
+              <div onClick={handleToggle} className="-mr-2 flex fixed top-4 z-50 right-0 w-full">
                 {isOpen ? (
                   <button className="w-[50px] flex justify-center items-center absolute top-0 right-0 h-[50px] text-black ">
                     <FaTimes onClick={openDrawer} className="text-2xl" />
