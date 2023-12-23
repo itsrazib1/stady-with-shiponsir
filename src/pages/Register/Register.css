@@ -1,6 +1,37 @@
-.reg-main-body{
-    background: url(../../../public/Ohi/regBG.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+.reg-main-body {
+  background: url(../../../public/Ohi/regBG.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.info-input {
+  background: none;
+  outline: none;
+  border: 2px solid rgb(44, 238, 252);
+  width: 400px;
+  border-radius: 11px;
+  padding: 7px 10px;
+  color: aliceblue;
+}
+.reg-bag-btn {
+    color: white;
+    background: none;
+    font-size: 30px;
+    padding: 6px 30px;
+    border-radius: 8px;
+    border: 1px solid white ;
+    transition: 0.5s;
+}
+.reg-bag-btn:hover{
+    background: white;
+    color: rgb(44, 238, 252);
+}
+@media only screen and (max-width: 600px) {
+  .info-input {
+    width: 300px;
+  }
+  .reg-bag-btn {
+    font-size: 20px;
+}
+
 }
