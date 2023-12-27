@@ -1,5 +1,28 @@
+import { useContext } from "react";
 import "./Register.css";
+import { AuthContext } from "../../providers/AuthProvider";
 const Register = () => {
+  const {createUser} = useContext(AuthContext)
+  const handelRegister = (event) =>{
+    event.preventDefault()
+    const form = event.target;
+    const name = form.name.value;
+    const fatherName = form.fatherName.value;
+    const motherName = form.motherName.value;
+    const gender = form.gender.value;
+    const phoneNumber = form.phoneNumber.value;
+    const email = form.email.value;
+    const picture = form.picture.value;
+    const password = form.password.value;
+    const user = {name, fatherName, motherName, gender, phoneNumber, email, picture, password};
+    console.log(user)
+
+    createUser(email, password)
+    .then(()=>{
+      
+    })
+
+  }
   return (
     <div className="reg-main-body m-auto  md:px-0 px-4 ">
       <div className="md:flex justify-center gap-20 items-center m-auto">
@@ -16,14 +39,14 @@ const Register = () => {
             <h1 className="text-2xl text-center text-[rgb(44,238,252)] font-semibold">
               Register Form
             </h1>
-            <form>
+            <form onSubmit={handelRegister}>
               <div className="">
                 <label className="text-white font-medium">Your Name</label>
                 <div>
                   <input
                     className="info-input"
                     type="text"
-                    name="Name"
+                    name="name"
                     placeholder="Name"
                     required
                     id=""
@@ -49,7 +72,7 @@ const Register = () => {
                   <input
                     className="info-input"
                     type="text"
-                    name="Mother Name"
+                    name="motherName"
                     placeholder="Mother Name"
                     required
                     id=""
@@ -101,7 +124,6 @@ const Register = () => {
                     placeholder="Phone"
                     id=""
                     required
-                    pattern="[0-9]"
                   />
                 </div>
               </div>
