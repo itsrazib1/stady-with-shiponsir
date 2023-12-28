@@ -21,6 +21,7 @@ const Register = () => {
     .then(()=>{
       
     })
+    .catch(error =>console.log(error))
 
   }
   return (

@@ -13,6 +13,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
   const {user, LogOut} = useContext(AuthContext)
   const [open, setOpen] = React.useState(false);
+  console.log(user)
 
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -73,7 +74,7 @@ const Navbar = () => {
                         Register
                       </a>{" "}
                       <span>/</span>{" "}
-                      <a className="hover:text-blue-400" href="/blogs">
+                      <a className="hover:text-blue-400" href="/login">
                         Login
                       </a>
                     </span>
@@ -149,12 +150,21 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                     </div>
                   </div>
                   <div className="mt-4 text-xl">
-                    <div className="hover:text-blue-400">
+                    {user?<>
+                  <div className="hover:text-blue-400">
+                    <p onClick={handelLogout}>Logout</p>
+                    </div>
+                    </>
+                  :
+                  <>
+                  <div className="hover:text-blue-400">
                       <Link to="/register">Register</Link>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://">Login</a>
+                      <a href="/login">Login</a>
                     </div>
+                  </>  
+                  }
                   </div>
                 </Drawer>
               )}
