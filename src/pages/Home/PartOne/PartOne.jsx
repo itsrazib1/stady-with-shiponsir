@@ -14,7 +14,7 @@ const PartOne = () => {
                 </div>
             </div>
             <div className="relative ">
-                <img className="backgroundImg" src="../../../../public/Razib/part1.png" alt="" />
+                <img className="backgroundImg" src="/public/Razib/part1.png" alt="" />
 
             </div>
         </div>

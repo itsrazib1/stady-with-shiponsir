@@ -1,44 +1,60 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
-// eslint-disable-next-line react/prop-types
+
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading,setloading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
-        setloading(true)
-        return createUserWithEmailAndPassword(auth, email, password);
-      };
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                setLoading(false);
+            })
+            .catch((error) => {
+                setLoading(false);
+                throw error;
+            });
+    };
 
-    const LogOut = () =>{
-        setloading(true);
+    const logOut = () => {
+        setLoading(true);
         return signOut(auth)
-    } 
+            .then(() => {
+                setLoading(false);
+            })
+            .catch((error) => {
+                setLoading(false);
+                throw error;
+            });
+    };
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setloading(false)
+            setLoading(false);
         });
-        return() => {
-            return unsubscribe()
-        }
-    })
+
+        return () => {
+            unsubscribe();
+        };
+    }, []);
+
     const Authinfo = {
         user,
         loading,
         createUser,
-        LogOut
-    }
-    return (
-        <AuthContext.Provider value={Authinfo}>
-            {children}
-        </AuthContext.Provider>
-    );
+        logOut,
+    };
+
+    return <AuthContext.Provider value={Authinfo}>
+        {children}
+    </AuthContext.Provider>;
 };
 
 export default AuthProvider;
