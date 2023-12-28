@@ -1,0 +1,76 @@
+[
+    {
+        
+        "name": "Razib",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "12:00-2:00",
+        "image": "https://i.ibb.co/g48x7HG/311312332-1582049148897752-7564633615246784129-n-1.jpg",
+        "role":"admin"
+      },
+    {
+        
+        "name": "Shamim",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "12:00-2:00",
+        "image": "https://i.ibb.co/6DGFHM0/409858472-1048233443042972-1560049231504831840-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Shrabon",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "12:00-2:00",
+        "image": "https://i.ibb.co/W5rqfyS/387795553-312847914712858-1488697620031319385-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Mim",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "12:00-2:00",
+        "image": "https://i.ibb.co/PjkXnxC/357428789-803171554792066-381400305790224796-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Pronab",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "4:00-5:00",
+        "image": "https://i.ibb.co/kSnsYQ8/356986984-281167851132336-1027902865090998639-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Chowa",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "4:00-5:00",
+        "image": "https://i.ibb.co/F6JYwFK/414588545-1083867146284801-9156927495264844149-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Sinfa",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "4:00-5:00",
+        "image": "https://i.ibb.co/Fs5Qk9J/366231412-982955606364880-6979086126308548757-n.jpg",
+        "role":"student"
+      },
+    {
+        
+        "name": "Rezual",
+        "batch": "2021-22",
+        "date": "Sun,Tus,Thu",
+      "time": "5:00-6:00",
+        "image": "https://i.ibb.co/0QfWB88/321843238-1101129080564969-3276376245671405856-n.jpg",
+        "role":"student"
+      }
+    
+    
+    ]
