@@ -18,9 +18,28 @@ const Register = () => {
     console.log(user)
 
     createUser(email, password)
-    .then(()=>{
-      
-    })
+      .then(() => {
+        const saveUser = {name:name,email:email,phoneNumber:phoneNumber,picture:picture,gender:gender}
+        fetch("http://localhost:5000/logindata",{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body: JSON.stringify(saveUser)
+        })
+        .then(res => res.json() )
+        .then(data => {
+          if(data.insertedId){
+            alert ("User created successfully!")
+          }
+        })
+
+        console.log("User created successfully!");
+      })
+
+      .catch((error) => {
+        console.log("Error creating user:", error);
+      });
 
   }
   return (

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-  const {user, LogOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext)
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
@@ -20,24 +20,24 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handelLogout = () =>{
-    LogOut()
-    .then(() => {})
-    .catch((error) => console.log(error));
+  const handelLogout = () => {
+    logOut()
+      .then(() => { })
+      .catch((error) => console.log(error));
   }
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className=' relative  flex  bg-white'>
-      <div className='absolute  w-full'>
+    <nav className=' relative  flex  '>
+      <div className='absolute z-[10]  w-full'>
 
         <div className="hidden md:block bg-white ">
-          <div className="flex relative mt-3 md:py-4 md:px-6 ">
+          <div className="flex relative -pt-1 md:py-4 md:px-6 ">
 
             <div className="invisible md:visible md:flex text-xl text-sync-400">
-              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Coaching</span>
+              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady-With-ShiponSir</span>
 
             </div>
             <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
@@ -62,8 +62,10 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 {user ? (
                   <>
-                    <p className="cursor-pointer hover:text-sky-500" onClick={handelLogout}>Logout</p>
-                    <img className="rounded-full" src={user?.photoURL}></img>
+
+                    <div>{user?.email}</div>
+                    <p className="cursor-pointer ps-3 bg-gradient-to-r from-[#ff0000] via-[#b70808] to-[#5a0101] text-white rounded-full  px-5 py-2 " onClick={handelLogout}>Logout</p>
+
                   </>
                 ) : (
                   <>
@@ -73,19 +75,20 @@ const Navbar = () => {
                         Register
                       </a>{" "}
                       <span>/</span>{" "}
-                      <a className="hover:text-blue-400" href="/blogs">
+                      <a className="hover:text-blue-400" href="/login">
                         Login
                       </a>
                     </span>
+                    <button
+                      type="button"
+                      className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center "
+                    >
+                      <a href="/register">Join now</a>
+                    </button>
                   </>
                 )}
               </div>
-              <button
-                type="button"
-                className="text-white text-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] hover:bg-gradient-to-br focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-full  px-10 py-2.5 text-center "
-              >
-                buy now
-              </button>
+
             </div>
           </div>
         </div>
@@ -97,14 +100,14 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
             >
               <div className="-mt-4">
                 <div className="  md:flex items-center ">
-                  <span className="  text-4xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                    Coaching
+                  <span className="  text-3xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
+                    Stady With ShiponSir
                   </span>
                 </div>
               </div>
               <div
                 onClick={handleToggle}
-                className="-mr-2 flex fixed top-4 z-50 right-0 w-full"
+                className="mr-2 flex fixed top-4 z-50 right-0 w-full"
               >
                 {isOpen ? (
                   <button className="w-[50px] flex justify-center items-center absolute top-0 right-0 h-[50px] text-black ">
@@ -121,8 +124,8 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                 <Drawer open={open} onClose={closeDrawer} className="p-4">
                   <div className="mb-6 flex items-center justify-between bg-red-800 px-10 py-6">
                     <Typography variant="h5" color="blue-gray">
-                      <span className="  text-4xl mt-8 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                        Coaching
+                      <span className="  text-2xl mt-8 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
+                        Stady With Shipon Sir
                       </span>
                     </Typography>
 
@@ -133,19 +136,19 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   </div>
                   <div className="text-xl">
                     <div className="hover:text-blue-400">
-                      <a href="http://"> Home</a>
+                      <a href="/"> Home</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://"> Event</a>
+                      <a href="/"> Event</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://"> Page</a>
+                      <a href="/"> Page</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://"> Block</a>
+                      <a href="/"> Block</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://"> courses</a>
+                      <a href="/"> courses</a>
                     </div>
                   </div>
                   <div className="mt-4 text-xl">
@@ -153,8 +156,18 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                       <Link to="/register">Register</Link>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="http://">Login</a>
+                      <a href="/login">Login</a>
                     </div>
+                    {user ? (
+                      < >
+
+                        <div className="pt-3 text-center">{user?.email}</div>
+                        <p className="cursor-pointer mt-3 ps-3 bg-gradient-to-r from-[#ff0000] via-[#b70808] to-[#5a0101] text-white rounded-full  px-5 py-2 mx-auto text-center " onClick={handelLogout}>Logout</p>
+
+                      </>
+                    ) : (<>
+                      <div>
+                      </div></>)}
                   </div>
                 </Drawer>
               )}
