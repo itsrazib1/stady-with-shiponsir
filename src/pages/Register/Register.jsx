@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import "./Register.css";
 import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
+
 const Register = () => {
-  const { createUser } = useContext(AuthContext)
-  const handelRegister = (event) => {
-    event.preventDefault()
+  const { createUser } = useContext(AuthContext);
+
+  const handelRegister = async (event) => {
+    event.preventDefault();
+
     const form = event.target;
     const name = form.name.value;
     const Batch = form.Batch.value;
@@ -13,36 +17,80 @@ const Register = () => {
     const gender = form.gender.value;
     const phoneNumber = form.phoneNumber.value;
     const email = form.email.value;
-    const picture = form.picture.value;
     const password = form.password.value;
-    const user = { name, email, phoneNumber,  picture,gender, password,Batch, Date,Time,  };
-    console.log(user)
+    const Role = "student";
 
-    createUser(email, password)
-      .then(() => {
-        const saveUser = { name: name, email: email, phoneNumber: phoneNumber, picture: picture, gender: gender,Batch:Batch,Date:Date,Time:Time }
-        fetch("http://localhost:5000/logindata", {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(saveUser)
-        })
-          .then(res => res.json())
-          .then(data => {
-            if (data.insertedId) {
-              alert("User created successfully!")
-            }
+    // Create a FormData object
+    const formData = new FormData();
+    formData.append("image", form.picture.files[0]); // Assuming "picture" is the name of your file input
+    
+    try {
+      // Upload the image to imgBB
+      const imgBbResponse = await axios.post(
+        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
+        formData
+      );
+
+      // Assuming imgBB returns a URL for the uploaded image
+      const imgUrl = imgBbResponse.data.data.url;
+      console.log("Image uploaded successfully:", imgUrl);
+
+      // Add the image URL to the user object
+      const user = {
+        name,
+        email,
+        phoneNumber,
+        picture: imgUrl,
+        gender,
+        password,
+        Batch,
+        Date,
+        Time,
+        Role,
+      };
+console.log("userx",user)
+      createUser(email, password)
+        .then(() => {
+          const saveUser = {
+            name,
+            email,
+            phoneNumber,
+            picture: imgUrl,
+            gender,
+            Batch,
+            Date,
+            Time,
+            Role,
+          };
+
+          fetch("http://localhost:5000/logindata", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
           })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                alert("User created successfully!");
+              }
+            })
+            .catch((error) => {
+              console.error("Error saving user:", error);
+            });
 
-        console.log("User created successfully!");
-      })
+          console.log("User created successfully!");
+        })
+        .catch((error) => {
+          console.error("Error creating user:", error);
+        });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
 
-      .catch((error) => {
-        console.log("Error creating user:", error);
-      });
-
-  }
+  
   return (
     <div className="reg-main-body m-auto min-h-screen md:px-0 px-4 ">
       <div className="md:flex justify-center gap-20 items-center m-auto">
