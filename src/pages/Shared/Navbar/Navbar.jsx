@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="flex relative -pt-1 md:py-4 md:px-6 ">
 
             <div className="invisible md:visible md:flex text-xl text-sync-400">
-              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady-With-ShiponSir</span>
+              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady With ShiponSir</span>
 
             </div>
             <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
@@ -93,21 +93,21 @@ const Navbar = () => {
           </div>
         </div>
         <div className="md:hidden">
-          <div className="mt-6 ">
+          <div className=" ">
             <div
-              className="fixed md:hidden md:text-[14px] h-[50px] md:h-[35px] flex  
+              className="fixed lg:pt-6 pt-5 bg-white md:hidden md:text-[14px] h-[50px] md:h-[35px] flex  
 md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg-transparent  "
             >
-              <div className="-mt-4">
-                <div className="  md:flex items-center ">
+              <div className="-mt-4 ">
+                <div className="  md:flex items-center  ">
                   <span className="  text-3xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                    Stady With ShiponSir
+                    Stady With Shipon Sir
                   </span>
                 </div>
               </div>
               <div
                 onClick={handleToggle}
-                className="mr-2 flex fixed top-4 z-50 right-0 w-full"
+                className="mr-2 flex fixed top-0 z-50 right-0 w-full"
               >
                 {isOpen ? (
                   <button className="w-[50px] flex justify-center items-center absolute top-0 right-0 h-[50px] text-black ">
