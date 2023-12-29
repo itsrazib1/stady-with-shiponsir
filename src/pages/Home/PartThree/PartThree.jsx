@@ -43,7 +43,7 @@ const PartThree = () => {
                     <div className="hero-content w-full text-center text-neutral-content">
 
 
-                        <div className="w-8/12 absolute -top-28">
+                        <div className="sm:w-8/12 w-10/12 absolute -top-28">
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-2 gap-5 justify-items-center items-center card shrink-0 w-full shadow-2xl bg-base-100 py-5 lg:py-0'>
                                 <div>
                                     <img className='w-36 lg:w-full' src="https://coaching.thimpress.com/demo-instructor/wp-content/uploads/sites/45/2019/10/contact-img.png" alt="" />
