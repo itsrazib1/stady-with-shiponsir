@@ -46,10 +46,10 @@ console.log(user)
               <a className="hover:text-blue-400" href="/dashboard">
               Dashboard
               </a>
-              <a className="hover:text-blue-400" href="#About">
+              <a className="hover:text-blue-400" href="/#About">
               About
               </a>
-              <a className="hover:text-blue-400" href="#Pricing">
+              <a className="hover:text-blue-400" href="/#Pricing">
               Pricing 
               </a>
               
@@ -142,10 +142,10 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                       <a href="/dashboard">Dashboard</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="#About">About</a>
+                      <a href="/#About">About</a>
                     </div>
                     <div className="hover:text-blue-400">
-                      <a href="#Pricing">Pricing </a>
+                      <a href="/#Pricing">Pricing </a>
                     </div>
                   
                   </div>
