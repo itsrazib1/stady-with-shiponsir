@@ -1,28 +1,35 @@
 import phone from '/public/Razib/icons8-phonecall-96.png'
 import mail from '/public/Razib/icons8-send-email-96.png'
 import address from '/public/Razib/icons8-place-marker-96.png'
+import aboutme from '/public/Razib/about-me-avt.jpg'
+import Professional from '/public/Razib/Professional-Service-2.png'
+import Instructor from '/public/Razib/Expert-Instructor.png'
+import Latest from '/public/Razib/Latest-News.png'
+import Admission from '/public/Razib/Admission-Now.png'
+import Connections from '/public/Razib/Connections-Academy.png'
+
 const PartTwo = () => {
     return (
         <>
             <div className="grid  sm:grid-cols-5 grid-cols-1  sm:px-16 px-2 text-center sm:py-16 py-5 sm:mx-28 mx-4 gap-5 text-white text-xl rounded-lg bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff]">
                 <div >
-                    <img className="h-[70px] mx-auto" src="/public/Razib/Professional-Service-2.png" alt="Professional Service" />
+                    <img className="h-[70px] mx-auto" src={Professional} alt="Professional Service" />
                     <p className="pt-5">Professional Service</p>
                 </div>
                 <div >
-                    <img className="h-[70px] mx-auto" src="/public/Razib/Expert-Instructor.png" alt="Expert Instructor" />
+                    <img className="h-[70px] mx-auto" src={Instructor} alt="Expert Instructor" />
                     <p className="pt-5">Expert Instructor</p>
                 </div>
                 <div >
-                    <img className="h-[70px] mx-auto" src="/public/Razib/Latest-News.png" alt="Latest News" />
+                    <img className="h-[70px] mx-auto" src={Latest} alt="Latest News" />
                     <p className="pt-5">Latest News</p>
                 </div>
                 <div >
-                    <img className="h-[70px] mx-auto" src="/public/Razib/Admission-Now.png" alt="Admission Now" />
+                    <img className="h-[70px] mx-auto" src={Admission} alt="Admission Now" />
                     <p className="pt-5">Admission Now</p>
                 </div>
                 <div >
-                    <img className="h-[70px] mx-auto" src="/public/Razib/Connections-Academy.png" alt="Connections Academy" />
+                    <img className="h-[70px] mx-auto" src={Connections} alt="Connections Academy" />
                     <p className="pt-5">Connections Academy</p>
                 </div>
             </div>
@@ -33,7 +40,7 @@ const PartTwo = () => {
                 <div className="sm:flex  lg:flex-row">
                     <div className=" sm:w-[50%] w-full">
                         <div className="swssrelative">
-                            <img src="/public/Razib/about-me-avt.jpg" alt="About me avatar" />
+                            <img src={aboutme} alt="About me avatar" />
                         </div>
                         <div className="font-bold text-lg swssabsolute rounded-lg bg-white p-4 shadow-lg w-60 sm:-mt-[390px] -mt-60 sm:ms-96 ms-1">
                             <div className="flex items-center">
