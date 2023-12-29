@@ -13,7 +13,7 @@ const DashboardOne = () => {
 
     return (
         <div>
-            <div className="pt-20 px-0  lg:px-40 overflow-x-auto">
+            <div className="pt-20 px-0 min-h-screen lg:px-40 overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
