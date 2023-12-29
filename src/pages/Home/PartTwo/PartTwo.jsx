@@ -29,7 +29,7 @@ const PartTwo = () => {
 
 
             {/* part two 2  */}
-            <div className="sm:px-28 sm:pt-32 p-4 min-h-screen">
+            <div id='About' className="sm:px-28 sm:pt-32 p-4 min-h-screen">
                 <div className="sm:flex  lg:flex-row">
                     <div className=" sm:w-[50%] w-full">
                         <div className="swssrelative">

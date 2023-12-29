@@ -4,7 +4,7 @@ const Partfive = () => {
 
     return (
         <div>
-            <div className=" h-screen bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff]">
+            <div  className="  h-screen bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff]">
                 <div className="  sm:flex flex-none justify-between items-center mx-auto">
 
 
@@ -27,7 +27,7 @@ const Partfive = () => {
             </div>
             {/* Part two in Part Five  */}
             <div>
-                <div className="min-h-screen">
+                <div id="Pricing" className="min-h-screen">
                     <h2 className="text-4xl font-bold text-center mt-20 mb-5">Our Pricing Plan</h2>
                     <p className="text-center mb-20">Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede <br />
                         phasellus eget etiam maecenas vel vici quis dictum. </p>

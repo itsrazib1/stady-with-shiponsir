@@ -7,90 +7,67 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
 
   const handelRegister = async (event) => {
-    event.preventDefault();
+      event.preventDefault();
 
-    const form = event.target;
-    const name = form.name.value;
-    const Batch = form.Batch.value;
-    const Date = form.Date.value;
-    const Time = form.Time.value;
-    const gender = form.gender.value;
-    const phoneNumber = form.phoneNumber.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    const Role = "student";
+      const form = event.target;
+      const name = form.name.value;
+      const Batch = form.Batch.value;
+      const Date = form.Date.value;
+      const Time = form.Time.value;
+      const gender = form.gender.value;
+      const phoneNumber = form.phoneNumber.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      const Role = "student";
 
-    // Create a FormData object
-    const formData = new FormData();
-    formData.append("image", form.picture.files[0]); // Assuming "picture" is the name of your file input
-    
-    try {
-      // Upload the image to imgBB
-      const imgBbResponse = await axios.post(
-        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
-        formData
-      );
+      const formData = new FormData();
+      formData.append("image", form.picture.files[0]);
 
-      // Assuming imgBB returns a URL for the uploaded image
-      const imgUrl = imgBbResponse.data.data.url;
-      console.log("Image uploaded successfully:", imgUrl);
+      try {
+          const imgBbResponse = await axios.post(
+              `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
+              formData
+          );
 
-      // Add the image URL to the user object
-      const user = {
-        name,
-        email,
-        phoneNumber,
-        picture: imgUrl,
-        gender,
-        password,
-        Batch,
-        Date,
-        Time,
-        Role,
-      };
-console.log("userx",user)
-      createUser(email, password)
-        .then(() => {
+          const imgUrl = imgBbResponse.data.data.url;
+
+          const user = await createUser(email, password, name, imgUrl);
+
           const saveUser = {
-            name,
-            email,
-            phoneNumber,
-            picture: imgUrl,
-            gender,
-            Batch,
-            Date,
-            Time,
-            Role,
+              name,
+              email,
+              phoneNumber,
+              picture: user.photoURL,
+              gender,
+              Batch,
+              Date,
+              Time,
+              Role,
           };
 
           fetch("http://localhost:5000/logindata", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(saveUser),
+              method: "POST",
+              headers: {
+                  "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
           })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.insertedId) {
-                alert("User created successfully!");
-              }
-            })
-            .catch((error) => {
-              console.error("Error saving user:", error);
-            });
+              .then((res) => res.json())
+              .then((data) => {
+                  if (data.insertedId) {
+                      alert("User created successfully!");
+                  }
+              })
+              .catch((error) => {
+                  console.error("Error saving user:", error);
+              });
 
-          console.log("User created successfully!");
-        })
-        .catch((error) => {
+          console.log("User created successfully!",user);
+      } catch (error) {
           console.error("Error creating user:", error);
-        });
-    } catch (error) {
-      console.error("Error uploading image:", error);
-    }
+      }
   };
 
-  
   return (
     <div className="reg-main-body m-auto min-h-screen md:px-0 px-4 ">
       <div className="md:flex justify-center gap-20 items-center m-auto">
