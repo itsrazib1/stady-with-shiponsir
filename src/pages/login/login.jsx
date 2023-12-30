@@ -94,7 +94,7 @@ const Login = () => {
             <p className="text-center mt-4">
               <small>
                 New Here?{" "}
-                <Link className="text-yellow-700" to="/register">
+                <Link className="text-blue-200 underline" to="/register">
                   Create an account
                 </Link>
               </small>

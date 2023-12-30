@@ -52,7 +52,7 @@ const Register = () => {
               Role,
           };
 
-          fetch("http://localhost:5000/logindata", {
+          fetch("https://stady-with-shiponsir-server.vercel.app/logindata", {
               method: "POST",
               headers: {
                   "content-type": "application/json",

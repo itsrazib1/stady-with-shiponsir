@@ -6,7 +6,7 @@ const Timewise = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/logindata');
+        const response = await fetch('https://stady-with-shiponsir-server.vercel.app/logindata');
         const data = await response.json();
         setData(data);
       } catch (error) {

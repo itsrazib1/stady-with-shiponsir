@@ -5,7 +5,7 @@ const DashboardOne = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/logindata')
+        fetch('https://stady-with-shiponsir-server.vercel.app/logindata')
             .then((response) => response.json())
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
