@@ -1,31 +1,98 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./Register.css";
 import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 const Register = () => {
-  const {createUser} = useContext(AuthContext)
-  const handelRegister = (event) =>{
-    event.preventDefault()
+  const { createUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handelRegister = async (event) => {
+    event.preventDefault();
+
     const form = event.target;
     const name = form.name.value;
-    const fatherName = form.fatherName.value;
-    const motherName = form.motherName.value;
+    const Batch = form.Batch.value;
+    const Date = form.Date.value;
+    const Time = form.Time.value;
     const gender = form.gender.value;
     const phoneNumber = form.phoneNumber.value;
     const email = form.email.value;
-    const picture = form.picture.value;
     const password = form.password.value;
-    const user = {name, fatherName, motherName, gender, phoneNumber, email, picture, password};
-    console.log(user)
+    const Role = "student";
+    const formData = new FormData();
+    formData.append("image", form.picture.files[0]); // Assuming "picture" is the name of your file input
+    
+    try {
+      // Upload the image to imgBB
+      const imgBbResponse = await axios.post(
+        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
+        formData
+      );
 
-    createUser(email, password)
-    .then(()=>{
-      
-    })
-    .catch(error =>console.log(error))
+      // Assuming imgBB returns a URL for the uploaded image
+      const imgUrl = imgBbResponse.data.data.url;
+      console.log("Image uploaded successfully:", imgUrl);
 
-  }
+      // Add the image URL to the user object
+      const user = {
+        name,
+        email,
+        phoneNumber,
+        picture: imgUrl,
+        gender,
+        password,
+        Batch,
+        Date,
+        Time,
+        Role,
+      };
+console.log("userx",user)
+      createUser(email, password)
+        .then(() => {
+          const saveUser = {
+            name,
+            email,
+            phoneNumber,
+            picture: imgUrl,
+            gender,
+            Batch,
+            Date,
+            Time,
+            Role,
+          };
+
+          fetch("http://localhost:5000/logindata", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                alert("User created successfully!");
+              }
+            })
+            .catch((error) => {
+              console.error("Error saving user:", error);
+            });
+
+          console.log("User created successfully!");
+        })
+        .catch((error) => {
+          console.error("Error creating user:", error);
+        });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
+
+  
   return (
-    <div className="reg-main-body m-auto  md:px-0 px-4 ">
+    <div className="reg-main-body m-auto min-h-screen md:px-0 px-4 ">
       <div className="md:flex justify-center gap-20 items-center m-auto">
         <div className="">
           <h1 className="md:text-4xl text-3xl font-bold text-white md:mb-4 mb-2">Login/Register Forms</h1>
@@ -54,36 +121,75 @@ const Register = () => {
                   />
                 </div>
               </div>
-              <div className="">
-                <label className="text-white font-medium">Father Name</label>
-                <div>
-                  <input
-                    className="info-input"
+              <div className="flex gap-3">
+                <div className="flex flex-col ">
+                  <label htmlFor="title" className="mb-2 text-white">
+                    Batch
+                  </label>
+                  <select
+                    className="w-28 text-white btn btn-outline "
                     type="text"
-                    name="fatherName"
-                    placeholder="Father Name"
+                    name="Batch"
+                    placeholder="Batch Name"
                     required
                     id=""
-                  />
+                  >
+
+                    <option className="text-black" value="2019-20">2019-20</option>
+                    <option className="text-black" value="2020-21">2020-21</option>
+                    <option className="text-black" value="2021-22">2021-22</option>
+                    <option className="text-black" value="2021-22">2022-23</option>
+
+                  </select>
                 </div>
-              </div>
-              <div className="">
-                <label className="text-white font-medium">Mother Name</label>
-                <div>
-                  <input
-                    className="info-input"
+                <div className="flex flex-col ">
+                  <label htmlFor="title" className="mb-2 text-white">
+                    Date
+                  </label>
+                  <select
+                    className="w-28 text-white btn btn-outline  "
                     type="text"
-                    name="motherName"
-                    placeholder="Mother Name"
+                    name="Date"
+                    placeholder="Date Name"
                     required
                     id=""
-                  />
+                  >
+
+                    <option className="text-black" value="Sun,Tus,Thu">Sun,Tus,Thu</option>
+                    <option className="text-black" value="Sat,Mon,Wed">Sat,Mon,Wed</option>
+
+                  </select>
+                </div>
+                <div className="flex flex-col ">
+                  <label htmlFor="title" className="mb-2 text-white">
+                    Time
+                  </label>
+                  <select
+                    className="w-28 text-white btn btn-outline "
+                    type="text"
+                    name="Time"
+                    placeholder="Time Name"
+                    required
+                    id=""
+                  >
+
+                    <option className="text-black" value="7:00-8:00">7:00-8:00</option>
+                    <option className="text-black" value="8:00-9:00">8:00-9:00</option>
+                    <option className="text-black" value="12:00-1:00">12:00-1:00</option>
+                    <option className="text-black" value="1:00-2:00">1:00-2:00</option>
+                    <option className="text-black" value="2:00-3:00">2:00-3:00</option>
+                    <option className="text-black" value="3:00-4:00">3:00-4:00</option>
+                    <option className="text-black" value="4:00-5:00">4:00-5:00</option>
+                    <option className="text-black" value="5:00-6:00">5:00-6:00</option>
+
+                  </select>
                 </div>
               </div>
+
               <div className="">
                 <label className="text-white font-medium">Gender</label>
-                <div className="text-white">
-                  <div>
+                <div className="text-white flex gap-4">
+                  <div className="">
                     <input
                       className="me-1"
                       type="radio"
@@ -114,6 +220,9 @@ const Register = () => {
                     Other
                   </div>
                 </div>
+              </div>
+              <div>
+                
               </div>
               <div className="">
                 <label className="text-white font-medium">Phone Number</label>
@@ -155,19 +264,24 @@ const Register = () => {
               </div>
               <div className="">
                 <label className="text-white font-medium">Password</label>
-                <div>
+                <div className="flex items-center">
                   <input
                     className="info-input"
-                    type="password"
+                    type={showPassword ? "text":"password"}
                     name="password"
                     id=""
                   />
+                  <span className="-ms-[35px]" onClick={()=> setShowPassword(!showPassword)}>
+                    {
+                      showPassword? <FaEyeSlash /> : <FaEye />
+                    }
+                  </span>
                 </div>
               </div>
               <div className="mt-5">
                 <div>
                   <input
-                    className="btn hover:bg-sky-500 info-input"
+                    className="btn hover:bg-sky-500  info-input"
                     type="submit"
                     id=""
                   />

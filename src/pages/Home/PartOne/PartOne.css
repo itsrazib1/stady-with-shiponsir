@@ -1,9 +1,12 @@
 .backgroundImg {
-    background-image: url("../../../../public/Razib/wall-background.jpg");
     background-repeat: no-repeat;
-    background-size: 80% 100%;
-    background-position: right center;
+    background-size: 75% 100%;
+    background-position: right;
     padding-top: 100px;
 
-
 }
+@media only screen and (max-width: 600px) {
+    .backgroundImg {
+        padding-top: 10px;
+    }
+  }

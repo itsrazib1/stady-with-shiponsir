@@ -1,3 +1,4 @@
+import Myclass from "./Myclass";
 import Timewise from "./Timewise";
 import DashboardOne from "./dashboardOne";
 
@@ -7,6 +8,7 @@ const Dashboard = () => {
         <div>
     <DashboardOne></DashboardOne>     
     <Timewise></Timewise>   
+    <Myclass></Myclass>
         </div>
     );
 };
