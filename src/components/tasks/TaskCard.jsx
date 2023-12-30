@@ -14,7 +14,6 @@ const TaskCard = ({ task }) => {
   const [users, setUsers] = useState([]);
 
 
-  console.log("User", users)
   useEffect(() => {
     fetch('https://stady-with-shiponsir-server.vercel.app/logindata')
       .then((response) => response.json())
@@ -27,7 +26,7 @@ const TaskCard = ({ task }) => {
   const moderatorUsers = users.filter(u => u.Role === 'Moderator');
   const isAdmin = adminUsers.some(u => u.email === user?.email);
   const ismoderator = moderatorUsers.some(u => u.email === user?.email);
-  console.log("Userdata", users, adminUsers, isAdmin, ismoderator)
+  console.log("Userdata", isAdmin, ismoderator)
 
 
 

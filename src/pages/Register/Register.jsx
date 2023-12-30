@@ -31,8 +31,8 @@ const Register = () => {
 
       try {
           const imgBbResponse = await axios.post(
-              // `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
-              `https://api.imgbb.com/1/upload?key=4803c990e6ad9b3d6298554d7ce49184`,
+              `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
+              
               formData
           );
 
