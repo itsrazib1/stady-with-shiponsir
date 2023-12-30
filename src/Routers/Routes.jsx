@@ -17,10 +17,6 @@ import Dashboard from "../pages/dashboard/dashboard";
             element:<Home></Home>
         },
         {
-          path: 'login',
-          element: <Login></Login>
-        },
-        {
           path: 'dashboard',
           element: <Dashboard></Dashboard>
         },
@@ -30,5 +26,9 @@ import Dashboard from "../pages/dashboard/dashboard";
       
         path:"/register",
         element:<Register/>
+    },
+    {
+      path: 'login',
+      element: <Login></Login>
     }
   ]);

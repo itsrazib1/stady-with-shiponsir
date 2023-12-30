@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import './login.css'
 const Login = () => {
   // const [disabled, setDisabled] = useState(true);
   const { signIn } = useContext(AuthContext);
@@ -32,44 +33,41 @@ const Login = () => {
   };
 
   return (
-    <>
       
-      <div className="min-h-screen bg-base-200 flex justify-center items-center">
+      <div className="min-h-screen bg-base-200 flex justify-center items-center login-main-body">
         <div className="w-full max-w-md">
-          <div>
-            <h1 className="text-5xl font-bold text-center mb-6 mt-5">
-              Login now!
-            </h1>
-          </div>
 
-          <div className="bg-base-100 shadow-2xl p-8">
-            <form onSubmit={handleLogin} className="space-y-4">
+          <div className="login-input-body rounded-xl shadow-2xl p-8">
+          <h1 className="text-5xl font-bold text-center mb-6 mt-5">
+              Login now
+            </h1>
+            <form onSubmit={handleLogin} className="">
               <div>
                 <label htmlFor="email" className="label">
-                  <span className="label-text">Email</span>
+                  <span>Email</span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input w-[100%] login-input-field"
                 />
               </div>
               <div>
                 <label htmlFor="password" className="label">
                   Password
                 </label>
-                <div className="flex">
+                <div className="flex items-center">
                   <input
                     type={showPassword ? "text" : "password"}
                     id="password"
                     name="password"
                     placeholder="password"
-                    className="input input-bordered"
+                    className="input input-bordered w-[100%] login-input-field"
                   />
                   <span
-                    className="  mt-6 -ms-7"
+                    className=" -ms-7"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -77,7 +75,7 @@ const Login = () => {
                 </div>
 
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <a href="#" className="label-text-alt link link-hover text-[#C2D5E8]">
                     Forgot password?
                   </a>
                 </label>
@@ -100,9 +98,11 @@ const Login = () => {
               </small>
             </p>
           </div>
+        <div className="login-page-home-btn-filed">
+        <button className="login-page-home-btn"><a href="/">Home</a></button>
+        </div>
         </div>
       </div>
-    </>
   );
 };
 

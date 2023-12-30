@@ -1,0 +1,26 @@
+.login-main-body{
+    background: url(../../../public/Ohi/loginBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-input-body{
+    background: rgb(98 98 98 / 66%);
+    color: #C2D5E8;
+}
+
+.login-input-field{
+    background: none;
+    outline: 1px solid rgb(255, 191, 52);
+}
+.login-page-home-btn-filed{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.login-page-home-btn{
+    padding: 10px 100px;
+    background-color: #4400ff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
