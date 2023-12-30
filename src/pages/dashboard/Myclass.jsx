@@ -1,11 +1,14 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useContext, useState } from 'react';
 import TaskCard from '../../components/tasks/TaskCard';
 import AddTaskModal from '../../components/tasks/AddTaskModal';
+import { useGetTaskQuery } from '../../redux/features/api/baseApi';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Myclass = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { tasks } = useSelector((state) => state.tasksSlice);
+  const { data:tasks,isLoading } = useGetTaskQuery();
+  
+  const { user } = useContext(AuthContext);
 
   const pendingTasks = tasks?.filter((item) => item.status == 'pending');
   const runningTasks = tasks?.filter((item) => item.status == 'running');
@@ -32,7 +35,7 @@ const Myclass = () => {
               
                 <div className="h-10 w-10 rounded-xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=644&q=80"
+                    src={user?.photoURL}
                     alt=""
                     className="object-cover h-full w-full "
                   />
@@ -45,11 +48,11 @@ const Myclass = () => {
               <div className="flex sticky top-0  justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
                 <h1>Current Class</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                  {pendingTasks.length}
+                  {pendingTasks?.length}
                 </p>
               </div>
               <div className="space-y-3">
-                {pendingTasks.map((item) => (
+                {pendingTasks?.map((item) => (
                   <TaskCard key={item.id} task={item} />
                 ))}
               </div>
@@ -58,11 +61,11 @@ const Myclass = () => {
               <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
                 <h1>Total Classes This Month</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                  {runningTasks.length}
+                  {runningTasks?.length}
                 </p>
               </div>
               <div className="space-y-3">
-                {runningTasks.map((item) => (
+                {runningTasks?.map((item) => (
                   <TaskCard key={item.id} task={item} />
                 ))}
               </div>
@@ -71,11 +74,11 @@ const Myclass = () => {
               <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
                 <h1>Total month</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                  {doneTasks.length}
+                  {doneTasks?.length}
                 </p>
               </div>
               <div className="space-y-3">
-                {doneTasks.map((item) => (
+                {doneTasks?.map((item) => (
                   <TaskCard key={item.id} task={item} />
                 ))}
               </div>
