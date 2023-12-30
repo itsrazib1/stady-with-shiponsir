@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { createContext } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useEffect, useState, createContext } from "react";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -9,22 +8,30 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (email, password) => {
+    const createUser = async (email, password, displayName, photoURL) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                setLoading(false);
-            })
-            .catch((error) => {
-                setLoading(false);
-                throw error;
-            });
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // Update the user profile with displayName and photoURL
+            await updateProfile(user, { displayName, photoURL });
+
+            setUser(user);
+            setLoading(false);
+
+            return user;
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     const logOut = () => {
         setLoading(true);
         return signOut(auth)
             .then(() => {
+                setUser(null);
                 setLoading(false);
             })
             .catch((error) => {

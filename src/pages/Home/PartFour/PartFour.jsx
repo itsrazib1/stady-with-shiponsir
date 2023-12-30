@@ -1,10 +1,17 @@
 import { Rating } from "@mui/material";
 import { IoMdPerson } from "react-icons/io";
 import "./PartFour.css";
+import  img1  from "../../../../public/Ohi/Learning-jQuery-Mobile-for-Beginners-342x266.webp";
+import  img  from "../../../../public/Ohi/HTML5CSS3-Essentials-in-4-Hours-342x266.webp";
+import  img2  from "../../../../public/Ohi/PHP-Master-and-Make-Money-Fast-342x266.webp";
+import  img3  from "../../../../public/Ohi/Rectangle-40-342x266.webp";
+import  img4  from "../../../../public/Ohi/Rectangle-43-342x266.webp";
+import  img5  from "../../../../public/Ohi/The-Art-of-Black-and-White-Photography-342x266.webp";
+
 
 const partFourData = [
   {
-    pic: "../../../../public/Ohi/HTML5CSS3-Essentials-in-4-Hours-342x266.webp",
+    pic: img,
     course_title: "Business Coach Practitioner Accreditation",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/fully-accredited-professional-body-healing-coach-diploma/",
@@ -13,7 +20,7 @@ const partFourData = [
     price: "free",
   },
   {
-    pic: "../../../../public/Ohi/Learning-jQuery-Mobile-for-Beginners-342x266.webp",
+    pic: img1,
     course_title: "The Complete Fitness & Health Masterclass",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/professional-life-coach-certification-guide/",
@@ -22,7 +29,7 @@ const partFourData = [
     price: "$69.00",
   },
   {
-    pic: "../../../../public/Ohi/PHP-Master-and-Make-Money-Fast-342x266.webp",
+    pic: img2,
     course_title: "Business Fundamentals and Startup Coach Certification",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/business-coach-practitioner-accreditation/",
@@ -31,7 +38,7 @@ const partFourData = [
     price: "$60.00",
   },
   {
-    pic: "../../../../public/Ohi/Rectangle-40-342x266.webp",
+    pic: img3,
     course_title: "Entrepreneurship and Business Life Coach Certification",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/the-complete-fitness-health-masterclass/",
@@ -40,7 +47,7 @@ const partFourData = [
     price: "$30.00",
   },
   {
-    pic: "../../../../public/Ohi/Rectangle-43-342x266.webp",
+    pic: img4,
     course_title: "Professional Life Coach Certification & Guide",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/business-fundamentals-and-startup-coach-certification/",
@@ -49,7 +56,7 @@ const partFourData = [
     price: "$80.00",
   },
   {
-    pic: "../../../../public/Ohi/The-Art-of-Black-and-White-Photography-342x266.webp",
+    pic: img5,
     course_title: "Fully Accredited Professional Body Healing Coach Diploma",
     course_link:
       "https://coaching.thimpress.com/demo-instructor/courses/entrepreneurship-and-business-life-coach-certification/",

@@ -6,7 +6,7 @@ const Timewise = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/studentsetails');
+        const response = await fetch('http://localhost:5000/logindata');
         const data = await response.json();
         setData(data);
       } catch (error) {
@@ -28,7 +28,7 @@ const Timewise = () => {
 
   // Organize data by date and time
   const organizedData = data.reduce((acc, item) => {
-    const key = `${item.date}_${item.time}`;
+    const key = `${item.Date}_${item.Time}`;
     if (!acc[key]) {
       acc[key] = [];
     }
@@ -54,8 +54,8 @@ const Timewise = () => {
               {items.map((item) => (
                 <tr key={item._id}>
                   <td>{item.name}</td>
-                  <td>{item.batch}</td>
-                  <td>{item.role}</td>
+                  <td>{item.Batch}</td>
+                  <td>{item.Role}</td>
                   {/* Add additional cells as needed */}
                 </tr>
               ))}
