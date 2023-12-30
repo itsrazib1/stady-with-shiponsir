@@ -1,19 +1,19 @@
 import { useForm } from 'react-hook-form';
 import Modal from '../ui/Modal';
-import { useDispatch } from 'react-redux';
-import { addTask } from '../../redux/features/tasks/tasksSlice';
+import { useAddTaskMutation } from '../../redux/features/api/baseApi';
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
   const { register, handleSubmit, reset } = useForm();
-  const dispatch = useDispatch();
 
+const [addTask,{data,error}] = useAddTaskMutation();
+console.log(data,error)
   const onCancel = () => {
     reset();
     setIsOpen(false);
   };
 
   const onSubmit = (data) => {
-    dispatch(addTask(data));
+    addTask({...data,status:'pending'});
     onCancel();
     console.log(data)
   };
@@ -23,11 +23,11 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Stady-With-ShiponSir">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col mb-5">
-          <label htmlFor="title" className="mb-2">
+          <label htmlFor="title" className="mb-2 ">
             Today Class Name
           </label>
           <input
-            className="w-full border border-black rounded-md"
+            className="w-full py-1 border border-black rounded-md"
             type="text"
             id="title"
             {...register('className')}
@@ -38,7 +38,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
             Student Name
           </label>
           <textarea
-            className="w-full border border-black rounded-md"
+            className="w-full border  border-black rounded-md"
             type="text"
             id="description"
             {...register('description')}
