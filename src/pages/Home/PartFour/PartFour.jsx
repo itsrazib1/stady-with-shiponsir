@@ -1,68 +1,68 @@
 import { Rating } from "@mui/material";
 import { IoMdPerson } from "react-icons/io";
 import "./PartFour.css";
-import  img1  from "../../../../public/Ohi/Learning-jQuery-Mobile-for-Beginners-342x266.webp";
-import  img  from "../../../../public/Ohi/HTML5CSS3-Essentials-in-4-Hours-342x266.webp";
-import  img2  from "../../../../public/Ohi/PHP-Master-and-Make-Money-Fast-342x266.webp";
-import  img3  from "../../../../public/Ohi/Rectangle-40-342x266.webp";
-import  img4  from "../../../../public/Ohi/Rectangle-43-342x266.webp";
-import  img5  from "../../../../public/Ohi/The-Art-of-Black-and-White-Photography-342x266.webp";
+import  img1  from "../../../../public/Razib/pof.jpg";
+import  img  from "../../../../public/Razib/poa.jpg";
+import  img2  from "../../../../public/Razib/tob.webp";
+import  img3  from "../../../../public/Razib/iacc.jpg";
+import  img4  from "../../../../public/Razib/bm.jpg";
+import  img5  from "../../../../public/Razib/ac.jpg";
 
 
 const partFourData = [
   {
     pic: img,
-    course_title: "Business Coach Practitioner Accreditation",
+    course_title: "Principles of Accounting",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/fully-accredited-professional-body-healing-coach-diploma/",
-    review: 1,
-    student: 311,
-    price: "free",
+      "/",
+    review: 4,
+    student: 300,
+    price: "10$/Month",
   },
   {
     pic: img1,
-    course_title: "The Complete Fitness & Health Masterclass",
+    course_title: "Principles of Finance",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/professional-life-coach-certification-guide/",
+      "/",
     review: 3,
     student: 50,
-    price: "$69.00",
+    price: "10$/Month",
   },
   {
     pic: img2,
-    course_title: "Business Fundamentals and Startup Coach Certification",
+    course_title: "Taxation in Bangladesh",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/business-coach-practitioner-accreditation/",
+      "/",
     review: 4.5,
     student: 45,
-    price: "$60.00",
+    price: "10$/Month",
   },
   {
     pic: img3,
-    course_title: "Entrepreneurship and Business Life Coach Certification",
+    course_title: "Intermediate Accounting",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/the-complete-fitness-health-masterclass/",
-    review: 2,
+      "/",
+    review: 4,
     student: 32,
-    price: "$30.00",
+    price: "10$/Month",
   },
   {
     pic: img4,
-    course_title: "Professional Life Coach Certification & Guide",
+    course_title: "Business Mathematics",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/business-fundamentals-and-startup-coach-certification/",
-    review: 3.3,
+      "/",
+    review: 3.5,
     student: 28,
-    price: "$80.00",
+    price: "10$/Month",
   },
   {
     pic: img5,
-    course_title: "Fully Accredited Professional Body Healing Coach Diploma",
+    course_title: "Advanced Accounting",
     course_link:
-      "https://coaching.thimpress.com/demo-instructor/courses/entrepreneurship-and-business-life-coach-certification/",
+      "/",
     review: 3,
     student: 27,
-    price: "$55.00",
+    price: "10$/Month",
   },
 ];
 const PartFour = () => {
@@ -73,7 +73,7 @@ const PartFour = () => {
         Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede
         phasellus eget etiam maecenas vel vici quis dictum.{" "}
       </p>
-      <div className="grid md:grid-cols-3 grid-cols-1 items-center justify-center gap-[38px] md:w-[1232px] my-16 m-auto">
+      <div className="grid md:grid-cols-3 grid-cols-1 px-5 items-center justify-center gap-[38px] md:w-[1232px] my-16 m-auto">
         {partFourData.map((Course, index) => (
           <div
             key={index}
@@ -81,7 +81,7 @@ const PartFour = () => {
           >
             <figure>
               <img
-                className="w-full card-img-style"
+                className="w-full card-img-style h-[300px] "
                 src={Course.pic}
                 alt="Shoes"
               />
@@ -117,7 +117,7 @@ const PartFour = () => {
         ))}
       </div>
       <button className="viewAll-btn-link-style">
-        <a href="https://coaching.thimpress.com/demo-instructor/courses/">
+        <a href="/#About">
           VIEW ALL
         </a>
       </button>

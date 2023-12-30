@@ -30,8 +30,8 @@ console.log(user)
     setIsOpen(!isOpen);
   };
   return (
-    <nav className=' relative  flex  '>
-      <div className='absolute z-[10]  w-full'>
+    <nav className=' relative   flex  '>
+      <div className='absolute z-[10] w-full'>
 
         <div className="hidden md:block  ">
           <div className="flex relative -pt-1 md:py-4 md:px-6 ">
@@ -63,7 +63,7 @@ console.log(user)
                   <>
 
                     
-                    <div><img className="w-10 rounded-full border border-black" src={user?.photoURL} alt="" /></div>
+                    <div><img className="w-10 h-10 rounded-full border border-black" src={user?.photoURL} alt="" /></div>
                     <div>{user?.displayName}</div>
                     <p className="cursor-pointer ps-3 bg-gradient-to-r from-[#ff0000] via-[#b70808] to-[#5a0101] text-white rounded-full  px-5 py-2 " onClick={handelLogout}>Logout</p>
 
@@ -106,6 +106,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   </span>
                 </div>
               </div>
+
               <div
                 onClick={handleToggle}
                 className="mr-2 flex fixed top-0 z-50 right-0 w-full"
@@ -166,12 +167,11 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                     </div>
                   </>  
                   }
-=======
                     {user ? (
                       < >
                         <div className="flex gap-3 ">
                         <div className="pt-3 text-center">{user?.displayName}</div>
-                        <div className="pt-2"><img className="w-10 rounded-full  border border-black" src={user?.photoURL} alt="" /></div>
+                        <div className="pt-2"><img className="w-10 h-10 rounded-full  border border-black" src={user?.photoURL} alt="" /></div>
                         </div>
                         
                         

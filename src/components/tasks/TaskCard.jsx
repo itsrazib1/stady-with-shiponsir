@@ -46,7 +46,7 @@ const TaskCard = ({ task }) => {
       {
         isAdmin ?
           (<>
-            <div className="bg-secondary/10 rounded-md p-5">
+            <div className="bg-secondary/10 px-2 lg:px-5 rounded-md p-5">
               <h1
                 className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
                   }${task.priority === 'Finance' ? 'text-green-500' : ' '
@@ -54,7 +54,7 @@ const TaskCard = ({ task }) => {
               >
                 {task?.className}
               </h1>
-              <p className="mb-3">{task?.description}</p>
+              <p className="mb-3 ">{task?.description}</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
               <div className="flex justify-between mt-3">
                 <p>{task?.date}</p>

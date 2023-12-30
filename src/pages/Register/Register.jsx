@@ -3,10 +3,13 @@ import "./Register.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate();
 
   const handelRegister = async (event) => {
       event.preventDefault();
@@ -59,7 +62,14 @@ const Register = () => {
               .then((res) => res.json())
               .then((data) => {
                   if (data.insertedId) {
-                      alert("User created successfully!");
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Registration is complete",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                      navigate('/')
                   }
               })
               .catch((error) => {

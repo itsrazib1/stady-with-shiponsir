@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import './login.css'
@@ -9,6 +9,7 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
 
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,6 +22,7 @@ const Login = () => {
       console.log(user);
       Swal.fire({
         title: "User Login Successful.",
+        icon: "success",
         showClass: {
           popup: "animate__animated animate__fadeInDown",
         },
@@ -28,7 +30,7 @@ const Login = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
-      
+      navigate("/");
     });
   };
 
