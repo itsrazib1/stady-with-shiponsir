@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./Register.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false)
 
   const handelRegister = async (event) => {
       event.preventDefault();
+
 
       const form = event.target;
       const name = form.name.value;
@@ -242,13 +245,18 @@ const Register = () => {
               </div>
               <div className="">
                 <label className="text-white font-medium">Password</label>
-                <div>
+                <div className="flex items-center">
                   <input
                     className="info-input"
-                    type="password"
+                    type={showPassword ? "text":"password"}
                     name="password"
                     id=""
                   />
+                  <span className="-ms-[35px]" onClick={()=> setShowPassword(!showPassword)}>
+                    {
+                      showPassword? <FaEyeSlash /> : <FaEye />
+                    }
+                  </span>
                 </div>
               </div>
               <div className="mt-5">
