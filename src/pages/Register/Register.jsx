@@ -76,7 +76,7 @@ const Register = () => {
     <div className="reg-main-body m-auto min-h-screen md:px-0 px-4 ">
       <div className="md:flex justify-center gap-20 items-center m-auto">
         <div className="">
-          <h1 className="md:text-4xl text-3xl font-bold text-white md:mb-4 mb-2">Login/Register Forms</h1>
+          <h1 className="md:text-4xl lg:pt-0 pt-8 text-3xl font-bold text-white md:mb-4 mb-2">Login/Register Forms</h1>
           <p className="text-white mb-3">If you have already registered then go to login</p>
           <div>
             <button className="reg-bag-btn me-3"><a href="/login">Login</a></button>
