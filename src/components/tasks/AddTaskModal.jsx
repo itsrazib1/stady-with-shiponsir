@@ -20,7 +20,7 @@ console.log(data,error)
 
 
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Stady-With-ShiponSir">
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Stady-With-SheponSir">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col mb-5">
           <label htmlFor="title" className="mb-2 ">
@@ -64,7 +64,7 @@ console.log(data,error)
             id="assignedTo"
             {...register('assignedTo')}
           >
-            <option value="Shipon Sir">Shipon Sir</option>
+            <option value="Shepon  Sir">Shepon  Sir</option>
 
           </select>
         </div>

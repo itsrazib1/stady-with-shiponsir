@@ -51,9 +51,10 @@ const TaskCard = ({ task }) => {
                   }${task.priority === 'Finance' ? 'text-green-500' : ' '
                   }`}
               >
-                {task?.className}
+                Today Class is {task?.className}
               </h1>
-              <p className="mb-3 ">{task?.description}</p>
+              <p className="mb-3 ">Added By : {task?.description}</p>
+              <p className="text-sm mb-3"> {task?.priority} Subject</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
               <div className="flex justify-between mt-3">
                 <p>{task?.date}</p>
