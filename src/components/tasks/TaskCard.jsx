@@ -12,7 +12,7 @@ const TaskCard = ({ task }) => {
   // admin user define start
 
   const [users, setUsers] = useState([]);
-
+console.log("usersx",task)
 
   useEffect(() => {
     fetch('https://stady-with-shiponsir-server.vercel.app/logindata')
@@ -27,9 +27,6 @@ const TaskCard = ({ task }) => {
   const isAdmin = adminUsers.some(u => u.email === user?.email);
   const ismoderator = moderatorUsers.some(u => u.email === user?.email);
   console.log("Userdata", isAdmin, ismoderator)
-
-
-
   // admin user define End
   let updatedStatus;
 
@@ -40,6 +37,7 @@ const TaskCard = ({ task }) => {
   } else {
     updatedStatus = 'archive';
   }
+  
   return (
     <>
       {
@@ -54,10 +52,16 @@ const TaskCard = ({ task }) => {
                 Today Class is {task?.className}
               </h1>
               <p className="mb-3 ">Added By : {task?.description}</p>
-              <p className="text-sm mb-3"> {task?.priority} Subject</p>
+              <div className='grid grid-cols-3 text-xs gap-2 mb-4'>
+                <div>Batch : {task?.Batch}</div>
+                <div>Date : {task?.Date}</div>
+                <div>Time : {task?.Time}</div>
+              </div>
+              <p className="lg:text-base text-sm mb-3"> {task?.priority} Subject</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
               <div className="flex justify-between mt-3">
                 <p>{task?.date}</p>
+              
                 <div className="flex gap-3">
                   <button onClick={() => deleteTask({ id: task._id, data })} title="Delete">
                     <TrashIcon className="h-5 w-5 text-red-500" />
