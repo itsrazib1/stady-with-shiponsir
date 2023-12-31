@@ -78,51 +78,64 @@ console.log("usersx",task)
             </div>
           </>) : ismoderator ? (
             <>
-              <div className="bg-secondary/10 rounded-md p-5">
-                <h1
-                  className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
-                    }${task.priority === 'Finance' ? 'text-green-500' : ' '
-                    }`}
-                >
-                  {task?.className}
-                </h1>
-                <p className="mb-3">{task?.description}</p>
-                <p className="text-sm">Class By - {task?.assignedTo}</p>
-                <div className="flex justify-between mt-3">
-                  <p>{task?.date}</p>
-                  <div className="flex gap-3">
-                    
-                    <button
-                      onClick={() => updateTasks({ id: task._id, data: { status: updatedStatus } })
-                      }
-                      title="Update Status"
-                    >
-                      <ArrowRightIcon className="h-5 w-5 text-primary" />
-                    </button>
-                  </div>
+              <div className="bg-secondary/10 px-2 lg:px-5 rounded-md p-5">
+              <h1
+                className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
+                  }${task.priority === 'Finance' ? 'text-green-500' : ' '
+                  }`}
+              >
+                Today Class is {task?.className}
+              </h1>
+              <p className="mb-3 ">Added By : {task?.description}</p>
+              <div className='grid grid-cols-3 text-xs gap-2 mb-4'>
+                <div>Batch : {task?.Batch}</div>
+                <div>Date : {task?.Date}</div>
+                <div>Time : {task?.Time}</div>
+              </div>
+              <p className="lg:text-base text-sm mb-3"> {task?.priority} Subject</p>
+              <p className="text-sm">Class By - {task?.assignedTo}</p>
+              <div className="flex justify-between mt-3">
+                <p>{task?.date}</p>
+              
+                <div className="flex gap-3">
+                  
+                  <button
+                    onClick={() => updateTasks({ id: task._id, data: { status: updatedStatus } })
+                    }
+                    title="Update Status"
+                  >
+                    <ArrowRightIcon className="h-5 w-5 text-primary" />
+                  </button>
                 </div>
               </div>
+            </div>
             </>
           ):
             (<>
-              <div className="bg-secondary/10 rounded-md p-5">
-                <h1
-                  className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
-                    }${task.priority === 'Finance' ? 'text-green-500' : ' '
-                    }`}
-                >
-                  {task?.className}
-                </h1>
-                <p className="mb-3">{task?.description}</p>
-                <p className="text-sm">Class By - {task?.assignedTo}</p>
-                <div className="flex justify-between mt-3">
-                  <p>{task?.date}</p>
-                  <div className="flex gap-3">
-
-
-                  </div>
+             <div className="bg-secondary/10 px-2 lg:px-5 rounded-md p-5">
+              <h1
+                className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
+                  }${task.priority === 'Finance' ? 'text-green-500' : ' '
+                  }`}
+              >
+                Today Class is {task?.className}
+              </h1>
+              <p className="mb-3 ">Added By : {task?.description}</p>
+              <div className='grid grid-cols-3 text-xs gap-2 mb-4'>
+                <div>Batch : {task?.Batch}</div>
+                <div>Date : {task?.Date}</div>
+                <div>Time : {task?.Time}</div>
+              </div>
+              <p className="lg:text-base text-sm mb-3"> {task?.priority} Subject</p>
+              <p className="text-sm">Class By - {task?.assignedTo}</p>
+              <div className="flex justify-between mt-3">
+                <p>{task?.date}</p>
+              
+                <div className="flex gap-3">
+                  
                 </div>
               </div>
+            </div>
             </>)
       }
 
