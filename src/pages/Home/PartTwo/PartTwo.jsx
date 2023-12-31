@@ -1,7 +1,7 @@
 import phone from '/public/Razib/icons8-phonecall-96.png'
 import mail from '/public/Razib/icons8-send-email-96.png'
 import address from '/public/Razib/icons8-place-marker-96.png'
-import aboutme from '/public/Razib/about-me-avt.jpg'
+import aboutme from '/public/Razib/about-me.jpg'
 import Professional from '/public/Razib/Professional-Service-2.png'
 import Instructor from '/public/Razib/Expert-Instructor.png'
 import Latest from '/public/Razib/Latest-News.png'
@@ -55,14 +55,14 @@ const PartTwo = () => {
                                 <div>
                                     <img className="w-7" src={phone} alt="phone" />
                                 </div>
-                                <div className="ml-2">(04) 3245-6988</div>
+                                <div className="ml-2">+8801922-257757</div>
                             </div></div>
                         <div className="bg-white swssabsolute rounded-lg -mt-28 p-4 text-slate-700 sm:-mt-[250px] shadow-lg w-60  sm:ms-96 ms-1">
                             <div className="flex items-center">
                                 <div>
                                     <img className="w-7" src={mail} alt="phone" />
                                 </div>
-                                <div className="ml-2 text-sm">support@constructor.com</div>
+                                <div className="ml-2 text-sm">sheponalamdu506@gmail.com</div>
                             </div>
                         </div>
                         <div className="bg-white swssabsolute  rounded-lg p-4 text-slate-700 shadow-lg w-60 sm:ms-96 sm:-mt-[180px] ms-20 -mt-12">
@@ -71,18 +71,15 @@ const PartTwo = () => {
                                 <div>
                                     <img className="w-7" src={address} alt="phone" />
                                 </div>
-                                <div className="ml-2 text-sm">A26BT5 Building,  SilverC <br />Street, London, England</div>
+                                <div className="ml-2 text-sm">Karatia Tangail,<br />Bangladesh</div>
                             </div>
                         </div>
                     </div>
 
                     <div className="sm:w-[50%] w-full py-10">
-                        <h1 className="text-5xl font-bold">Hi, I am Mary Johans <br /> About me</h1>
+                        <h1 className="text-5xl font-bold">Hi, I am Shepon Alam <br /> About me</h1>
                         <p className="py-6">
-                            Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. <br />
-                            Pede phasellus eget. Etiam maecenas vel vici quis dictum rutrum nec <br />
-                            nisi et. Ac penatibus aenean laoreet donec viverra. Lorem ipsum dolor <br />
-                            sit amet mollis felis dapibus arcu phasellus eget.
+                        Dedicated college teacher in Accounting since June 1, 2016. Passionate about fostering student growth through engaging lectures and practical insights. Committed to cultivating a dynamic learning environment and instilling a deep understanding of accounting principles.
                         </p>
                         <button className="font-bold text-black hover:text-white py-3 px-10 border border-[#13bde4] hover:bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] rounded-3xl">
                             <span className="">VIEW DETAIL</span>

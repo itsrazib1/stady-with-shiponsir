@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-
+import img from "/public/Razib/IMG_20231231_212655.png"
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [open, setOpen] = React.useState(false);
@@ -37,8 +37,8 @@ console.log(user)
           <div className="flex relative -pt-1 md:py-4 md:px-6 ">
 
             <div className="invisible md:visible md:flex text-xl text-sync-400">
-              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady With SheponSir</span>
-
+              
+              <img className="w-[400px]"  src={img} alt="" />
             </div>
             <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
               <a className="hover:text-blue-400" href="/">

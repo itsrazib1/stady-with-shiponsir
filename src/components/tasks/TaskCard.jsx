@@ -121,7 +121,7 @@ console.log("usersx",task)
                 Today Class is {task?.className}
               </h1>
               <p className="mb-3 ">Added By : {task?.description}</p>
-              <div className='grid grid-cols-3 text-xs gap-2 mb-4'>
+              <div className='grid grid-cols-3 sm:text-base text-xs gap-2 mb-4'>
                 <div>Batch : {task?.Batch}</div>
                 <div>Date : {task?.Date}</div>
                 <div>Time : {task?.Time}</div>
