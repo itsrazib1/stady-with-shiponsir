@@ -37,7 +37,7 @@ console.log(user)
           <div className="flex relative -pt-1 md:py-4 md:px-6 ">
 
             <div className="invisible md:visible md:flex text-xl text-sync-400">
-              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady With ShiponSir</span>
+              <span className="text-1xl md:text-5xl font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent">Stady With SheponSir</span>
 
             </div>
             <div className="md:space-x-12 mt-4 ms-12 text-xl align-middle justify-center  ">
@@ -102,7 +102,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
               <div className="-mt-4 ">
                 <div className="  md:flex items-center  ">
                   <span className="  text-3xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                    Stady With Shipon Sir
+                    Stady With Shepon Sir
                   </span>
                 </div>
               </div>
@@ -127,7 +127,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   <div className="mb-6 flex rounded-lg border border-black items-center justify-between bg-gray-200 px-10 py-6">
                     <Typography variant="h5" color="blue-gray">
                       <span className="  text-2xl mt-8 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                        Stady With Shipon Sir
+                        Stady With Shepon Sir
                       </span>
                     </Typography>
 

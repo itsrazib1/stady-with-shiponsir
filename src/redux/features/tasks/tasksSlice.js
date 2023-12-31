@@ -9,7 +9,7 @@ const initialState = {
       description:
         'Razib,Shamim,Shrabon,Pronab,Mim,Sinfa,Chowa',
       date: '2023-08-28',
-      assignedTo: 'Shipon Sir',
+      assignedTo: 'Shepon Sir',
       priority: 'Finance',
     },
   ],
