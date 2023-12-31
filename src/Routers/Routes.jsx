@@ -6,11 +6,14 @@ import Home from "../pages/Home/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/login/login";
 import Dashboard from "../pages/dashboard/dashboard";
+import PrivateRoute from "../components/layouts/PrivateRoute";
+import Error from "../pages/Home/Error";
 
   export const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
+      errorElement:<Error></Error>,
       children: [
         {
             path:'/',
@@ -18,13 +21,13 @@ import Dashboard from "../pages/dashboard/dashboard";
         },
         {
           path: 'dashboard',
-          element: <Dashboard></Dashboard>
+          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute> 
         },
       ]
     },
     {
       
-        path:"/register",
+        path:"register",
         element:<Register/>
     },
     {

@@ -14,9 +14,8 @@ const TaskCard = ({ task }) => {
   const [users, setUsers] = useState([]);
 
 
-  console.log("User", users)
   useEffect(() => {
-    fetch('http://localhost:5000/logindata')
+    fetch('https://stady-with-shiponsir-server.vercel.app/logindata')
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error('Error fetching data:', error));
@@ -27,7 +26,7 @@ const TaskCard = ({ task }) => {
   const moderatorUsers = users.filter(u => u.Role === 'Moderator');
   const isAdmin = adminUsers.some(u => u.email === user?.email);
   const ismoderator = moderatorUsers.some(u => u.email === user?.email);
-  console.log("Userdata", users, adminUsers, isAdmin, ismoderator)
+  console.log("Userdata", isAdmin, ismoderator)
 
 
 
@@ -46,7 +45,7 @@ const TaskCard = ({ task }) => {
       {
         isAdmin ?
           (<>
-            <div className="bg-secondary/10 rounded-md p-5">
+            <div className="bg-secondary/10 px-2 lg:px-5 rounded-md p-5">
               <h1
                 className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
                   }${task.priority === 'Finance' ? 'text-green-500' : ' '
@@ -54,7 +53,7 @@ const TaskCard = ({ task }) => {
               >
                 {task?.className}
               </h1>
-              <p className="mb-3">{task?.description}</p>
+              <p className="mb-3 ">{task?.description}</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
               <div className="flex justify-between mt-3">
                 <p>{task?.date}</p>

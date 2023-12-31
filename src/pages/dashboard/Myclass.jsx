@@ -19,16 +19,16 @@ const Myclass = () => {
       <AddTaskModal isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className=" min-h-screen">
-        <div className=" px-10 pt-10">
+        <div className=" lg:px-10  px-2 pt-10">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="font-semibold text-3xl">Attendance sheet</h1>
+              <h1 className="font-semibold lg:text-3xl text-base">Attendance sheet</h1>
             </div>
             <div className="flex gap-5">
               
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="btn btn-primary"
+                className="btn btn-primary lg:text-base text-xs btn-xs lg:-mt-1 mt-2 lg:btn-md"
               >
                 Add Today's attendance
               </button>
@@ -43,9 +43,9 @@ const Myclass = () => {
               
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-10">
+          <div className="grid lg:grid-cols-3 grid-cols-2 lg:gap-5 gap-2 mt-10">
             <div className="relative h-[800px] overflow-auto">
-              <div className="flex sticky top-0  justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
+              <div className="flex sticky top-0 lg:text-base text-xs justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
                 <h1>Current Class</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
                   {pendingTasks?.length}
@@ -58,7 +58,7 @@ const Myclass = () => {
               </div>
             </div>
             <div className="relative h-[800px] overflow-auto">
-              <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
+              <div className="lg:text-base text-xs flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
                 <h1>Total Classes This Month</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
                   {runningTasks?.length}

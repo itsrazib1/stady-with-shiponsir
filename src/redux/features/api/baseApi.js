@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const baseApi = createApi({
     reducerPath: "api",
-    baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:5000'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'https://stady-with-shiponsir-server.vercel.app'}),
     tagTypes:['Tasks'],
     endpoints: (builder) => ({
         getTask : builder.query({
@@ -19,6 +19,15 @@ const baseApi = createApi({
             }),
             invalidatesTags:['Tasks']
         }),
+        updateCaptain: builder.mutation({
+            query: ({id , data}) => ({
+                url : `/updateTask/${id}`,
+                method: 'PATCH',
+                body:data
+            }),
+            invalidatesTags:['Tasks']
+        }),
+        
         deleteTask: builder.mutation({
             query: ({id , data}) => ({
                 url : `/studentsetails/${id}`,
@@ -38,6 +47,6 @@ const baseApi = createApi({
     }),
 });
 
-export const { useGetTaskQuery , useUpdateTaskMutation , useAddTaskMutation ,useDeleteTaskMutation} = baseApi;
+export const { useGetTaskQuery , useUpdateTaskMutation , useAddTaskMutation ,useDeleteTaskMutation , useUpdateCaptainMutation} = baseApi;
 
 export default baseApi;

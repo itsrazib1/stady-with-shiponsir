@@ -6,7 +6,7 @@ const Timewise = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/logindata');
+        const response = await fetch('https://stady-with-shiponsir-server.vercel.app/logindata');
         const data = await response.json();
         setData(data);
       } catch (error) {
@@ -37,7 +37,7 @@ const Timewise = () => {
   }, {});
 
   return (
-    <div className='px-10 grid lg:grid-cols-3 grid-cols-1 gap-3  p-4'>
+    <div className='lg:px-10 px-3 grid lg:grid-cols-3 grid-cols-1 gap-3  p-4'>
       {Object.entries(organizedData).map(([dateTime, items]) => (
         <div className='border p-2 rounded-md' key={dateTime}>
           <h2 className='text-center'>{dateTime}</h2>

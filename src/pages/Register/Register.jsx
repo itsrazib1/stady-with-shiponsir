@@ -3,10 +3,13 @@ import "./Register.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate();
 
   const handelRegister = async (event) => {
       event.preventDefault();
@@ -28,8 +31,8 @@ const Register = () => {
 
       try {
           const imgBbResponse = await axios.post(
-              // `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
-              `https://api.imgbb.com/1/upload?key=4803c990e6ad9b3d6298554d7ce49184`,
+              `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_Upload_token}`,
+              
               formData
           );
 
@@ -49,7 +52,7 @@ const Register = () => {
               Role,
           };
 
-          fetch("http://localhost:5000/logindata", {
+          fetch("https://stady-with-shiponsir-server.vercel.app/logindata", {
               method: "POST",
               headers: {
                   "content-type": "application/json",
@@ -59,7 +62,14 @@ const Register = () => {
               .then((res) => res.json())
               .then((data) => {
                   if (data.insertedId) {
-                      alert("User created successfully!");
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Registration is complete",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                      navigate('/')
                   }
               })
               .catch((error) => {
