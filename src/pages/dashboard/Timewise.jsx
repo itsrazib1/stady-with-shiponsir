@@ -37,7 +37,7 @@ const Timewise = () => {
   }, {});
 
   return (
-    <div className='px-10 grid lg:grid-cols-3 grid-cols-1 gap-3  p-4'>
+    <div className='lg:px-10 px-3 grid lg:grid-cols-3 grid-cols-1 gap-3  p-4'>
       {Object.entries(organizedData).map(([dateTime, items]) => (
         <div className='border p-2 rounded-md' key={dateTime}>
           <h2 className='text-center'>{dateTime}</h2>

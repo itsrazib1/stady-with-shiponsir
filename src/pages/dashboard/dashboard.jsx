@@ -20,7 +20,7 @@ const Dashboard = () => {
 
 
     const adminUsers = users.filter(u => u.Role === 'Admin');
-    const moderatorUsers = users.filter(u => u.Role === 'Moderator');
+    const moderatorUsers = users.filter(u => u.Role === 'Captain');
     const isAdmin = adminUsers.some(u => u.email === user?.email);
     const ismoderator = moderatorUsers.some(u => u.email === user?.email);
     console.log("Userdata", isAdmin, ismoderator)

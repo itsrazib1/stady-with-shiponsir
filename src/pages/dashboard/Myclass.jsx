@@ -19,7 +19,7 @@ const Myclass = () => {
       <AddTaskModal isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className=" min-h-screen">
-        <div className=" lg:px-10 px-2 pt-10">
+        <div className=" lg:px-10  px-2 pt-10">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="font-semibold lg:text-3xl text-base">Attendance sheet</h1>
