@@ -1,6 +1,6 @@
 import Count from './Count';
 import './PartThree.css'
-
+import VisibilitySensor from 'react-visibility-sensor';
 const PartThree = () => {
     return (
         <div className='pb-10'>
@@ -77,8 +77,14 @@ const PartThree = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='absolute bottom-16  lg:bottom-16 w-9/12 mx-auto'>
-                        <Count />
+                    <div className='absolute bottom-10  lg:bottom-16  w-9/12 mx-auto'>
+                        <Count end={400}>
+                        {({ countUpRef, start }) => (
+      <VisibilitySensor onChange={start}>
+        <span ref={countUpRef} />
+      </VisibilitySensor>
+    )}
+                        </Count>
                     </div>
                 </div>
             </div>
