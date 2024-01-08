@@ -87,10 +87,10 @@ console.log("usersx",task)
                 Today Class is {task?.className}
               </h1>
               <p className="mb-3 ">Added By : {task?.description}</p>
-              <div className='grid grid-cols-3 text-xs gap-2 mb-4'>
-                <div>Batch : {task?.Batch}</div>
-                <div>Date : {task?.Date}</div>
-                <div>Time : {task?.Time}</div>
+              <div className='grid lg:grid-cols-3 grid-cols-1 text-xs lg:text-base  gap-2 mb-2'>
+                <div>Batch:{task?.Batch}</div>
+                <div>Date:{task?.Date}</div>
+                <div>Time:{task?.Time}</div>
               </div>
               <p className="lg:text-base text-sm mb-3"> {task?.priority} Subject</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
@@ -121,10 +121,10 @@ console.log("usersx",task)
                 Today Class is {task?.className}
               </h1>
               <p className="mb-3 ">Added By : {task?.description}</p>
-              <div className='grid grid-cols-3 sm:text-base text-xs gap-2 mb-4'>
-                <div>Batch : {task?.Batch}</div>
-                <div>Date : {task?.Date}</div>
-                <div>Time : {task?.Time}</div>
+              <div className='grid lg:grid-cols-3 grid-cols-1 text-xs lg:text-base  gap-2 mb-2'>
+                <div>Batch:{task?.Batch}</div>
+                <div>Date:{task?.Date}</div>
+                <div>Time:{task?.Time}</div>
               </div>
               <p className="lg:text-base text-sm mb-3"> {task?.priority} Subject</p>
               <p className="text-sm">Class By - {task?.assignedTo}</p>
