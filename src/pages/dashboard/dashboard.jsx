@@ -3,6 +3,7 @@ import Myclass from "./Myclass";
 import Timewise from "./Timewise";
 import DashboardOne from "./dashboardOne";
 import { AuthContext } from "../../providers/AuthProvider";
+import Classbybatch from "./Classbybatch";
 
 
 const Dashboard = () => {
@@ -32,16 +33,19 @@ const Dashboard = () => {
                     (<>
                         <DashboardOne></DashboardOne>
                         <Timewise></Timewise>
+                        <Classbybatch></Classbybatch>
                         <Myclass></Myclass>
                     </>) :
                     ismoderator ?
                         (<>
                             <div className="pt-10 ">
+                        <Classbybatch></Classbybatch>
                                 <Myclass></Myclass>
                             </div>
                         </>) :
                         (<>
                             <div className="pt-10 ">
+                        <Classbybatch></Classbybatch>
                                 <Myclass></Myclass>
                             </div>
                         </>)
