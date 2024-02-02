@@ -8,7 +8,7 @@ const PartThree = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center items-center container mx-auto'>
                     <div className='w-9/12 lg:w-7/12 mx-auto'>
                         <h1 className='text-3xl lg:text-5xl font-semibold'>How Can I Help You</h1>
-                        <p className='mt-8'>Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede phasellus eget etiam Maecenas vel vici quis dictum rutrum nec nisi et. Ac penatibus aenean laoreet donec viverra felis dapibus arcu, ipsum dolor sit amet mollis ipsum dolor sit amet ipsum dolor.</p>
+                        <p className='mt-8'>Students usually don't understand everything, I didn't understand when I was a student. But I will tell about how to understand and how to learn faster and Teach students their own way</p>
                         <button className="font-bold text-black hover:text-white py-3 px-10 border-[#13bde4] border hover:bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] rounded-3xl mt-10">
                             <span className="font-medium">VIEW DETAIL</span>
                         </button>

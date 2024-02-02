@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
 const Count = () => {
-  const [countOn, setCountOn] = useState(false);
+  const [countOn, setCountOn] = useState(true);
 
   useEffect(() => {
     if (countOn) {

@@ -70,7 +70,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
 
           <div className="flex  flex-col mb-5">
             <label htmlFor="title" className="mb-2 ">
-            Time
+              Time
             </label>
             <select
               className="w-full rounded-md text-center border border-black"
@@ -78,20 +78,20 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
               {...register('Time')}
             >
               <option className="text-black" value="7:00-8:00">7:00-8:00</option>
-                    <option className="text-black" value="8:00-9:00">8:00-9:00</option>
-                    <option className="text-black" value="12:00-1:00">12:00-1:00</option>
-                    <option className="text-black" value="1:00-2:00">1:00-2:00</option>
-                    <option className="text-black" value="2:00-3:00">2:00-3:00</option>
-                    <option className="text-black" value="3:00-4:00">3:00-4:00</option>
-                    <option className="text-black" value="4:00-5:00">4:00-5:00</option>
-                    <option className="text-black" value="5:00-6:00">5:00-6:00</option>
+              <option className="text-black" value="8:00-9:00">8:00-9:00</option>
+              <option className="text-black" value="12:00-1:00">12:00-1:00</option>
+              <option className="text-black" value="1:00-2:00">1:00-2:00</option>
+              <option className="text-black" value="2:00-3:00">2:00-3:00</option>
+              <option className="text-black" value="3:00-4:00">3:00-4:00</option>
+              <option className="text-black" value="4:00-5:00">4:00-5:00</option>
+              <option className="text-black" value="5:00-6:00">5:00-6:00</option>
 
 
             </select>
           </div>
           <div className="flex  flex-col mb-5">
             <label htmlFor="title" className="mb-2 ">
-            Date
+              Date
             </label>
             <select
               className="w-full rounded-md text-center border border-black"
@@ -144,6 +144,15 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
             <option value="Accounting">Accounting</option>
             <option defaultValue value="Finance">
               Finance
+            </option>
+            <option defaultValue value="Intermediate Accounting">
+            Intermediate Accounting
+            </option>
+            <option defaultValue value="Business Mathematics">
+            Business Mathematics
+            </option>
+            <option defaultValue value="Business Statistics">
+            Business Statistics 
             </option>
           </select>
         </div>
