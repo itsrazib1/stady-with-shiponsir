@@ -77,7 +77,7 @@ const PartThree = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='absolute bottom-10  lg:bottom-16  w-9/12 mx-auto'>
+                    <div className='absolute bottom-5  lg:bottom-16  w-9/12 mx-auto'>
                         <Count end={400}>
                         {({ countUpRef, start }) => (
       <VisibilitySensor onChange={start}>
