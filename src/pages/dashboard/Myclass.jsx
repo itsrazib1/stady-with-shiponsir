@@ -59,7 +59,7 @@ const Myclass = () => {
             </div>
             <div className="relative h-[800px] overflow-auto">
               <div className="lg:text-base text-xs flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
-                <h1>Classes This Month</h1>
+                <h1>Ongoing Class</h1>
                 <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
                   {runningTasks?.length}
                 </p>
