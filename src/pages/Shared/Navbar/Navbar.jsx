@@ -64,7 +64,7 @@ console.log(user)
 
                     
                     <div><img className="w-10 h-10 rounded-full border border-black" src={user?.photoURL} alt="" /></div>
-                    <div>{user?.displayName}</div>
+                    <div><a href="/profile">{user?.displayName}</a></div>
                     <p className="cursor-pointer ps-3 bg-gradient-to-r from-[#ff0000] via-[#b70808] to-[#5a0101] text-white rounded-full  px-5 py-2 " onClick={handelLogout}>Logout</p>
 
                   </>
@@ -169,7 +169,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                     {user ? (
                       < >
                         <div className="flex gap-3 ">
-                        <div className="pt-3 text-center">{user?.displayName}</div>
+                        <div className="pt-3 text-center"><a href="/profile">{user?.displayName}</a></div>
                         <div className="pt-2"><img className="w-10 h-10 rounded-full  border border-black" src={user?.photoURL} alt="" /></div>
                         </div>
                         

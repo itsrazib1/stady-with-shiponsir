@@ -78,9 +78,7 @@ const Count = () => {
                 <div className="stat-value text-[#13bde4]  text-2xl lg:text-6xl font-normal md:border-r-2 lg:border-r-2">
                   <div className="me-6">
                     <CountUp
-                      start={0}
-                      end={90}
-                      duration={3.75}
+                      start={90}
                     >
                       {({ countUpRef, start }) => (
                         <div>

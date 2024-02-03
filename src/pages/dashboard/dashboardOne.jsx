@@ -20,13 +20,13 @@ const DashboardOne = () => {
     //         },
     //         body: JSON.stringify({ Role: newRole }),
     //       });
-    
+
     //       if (response.ok) {
     //         // If the update was successful, fetch the updated data
     //         const updatedData = await fetch('https://stady-with-shiponsir-server.vercel.app/logindata')
     //           .then((response) => response.json())
     //           .catch((error) => console.error('Error fetching updated data:', error));
-    
+
     //         setData(updatedData);
     //       } else {
     //         console.error('Failed to update role');
@@ -74,7 +74,10 @@ const DashboardOne = () => {
                                 </td>
                                 <td className='hidden sm:block mt-4'>Govt. Saadat College</td>
                                 <td><div className="dropdown dropdown-end ">
-                                    <div tabIndex={0} role="button" className="btn btn-success lg:btn-md btn-xs text-xs text-white ms-5 m-1">{item.Role}</div>
+                                    <div tabIndex={0} role="button" className={`btn ${item.Role === 'Admin' ? 'btn-secondary' : 'btn-success'} lg:btn-md btn-xs text-xs text-white ms-5 m-1`}>
+                                        {item.Role}
+                                    </div>
+
                                     {/* <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a><div onClick={() => updateRole(item._id, 'Student')} className='btn btn-error btn-xs text-white '>Make Student</div></a></li>
                                         <li><a><div onClick={() => updateRole(item._id, 'Captain')} className='btn btn-accent btn-xs text-white'>Make captain</div></a></li>
