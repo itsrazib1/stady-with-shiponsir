@@ -63,7 +63,7 @@ const DashboardOne = () => {
                                         </div>
                                         <div>
                                             <div className="lg:font-bold font-semibold lg:text-base textxxs ps-1">{item.name}</div>
-                                            <div className="lg:text-sm text-xs opacity-50 ps-1 text-start">{item.Batch}</div>
+                                            <div className="lg:text-sm text-xs opacity-50 font-semibold ps-1 text-start">{item.Batch}</div>
                                         </div>
                                     </div>
                                 </td>
