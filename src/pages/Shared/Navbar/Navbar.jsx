@@ -64,7 +64,7 @@ console.log(user)
 
                     
                     <div><img className="w-10 h-10 rounded-full border border-black" src={user?.photoURL} alt="" /></div>
-                    <div>{user?.displayName}</div>
+                    <div><a href="/profile">{user?.displayName}</a></div>
                     <p className="cursor-pointer ps-3 bg-gradient-to-r from-[#ff0000] via-[#b70808] to-[#5a0101] text-white rounded-full  px-5 py-2 " onClick={handelLogout}>Logout</p>
 
                   </>
@@ -99,10 +99,10 @@ console.log(user)
               className="fixed lg:pt-6 pt-5 bg-white md:hidden md:text-[14px] h-[50px] md:h-[35px] flex  
 md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg-transparent  "
             >
-              <div className="-mt-4 ">
+              <div className="-mt-2 ">
                 <div className="  md:flex items-center  ">
-                  <span className="  text-3xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
-                    Stady With Shepon Sir
+                  <span className="  text-2xl mt-8 ms-4 font-bold bg-gradient-to-r from-[#04e4c5] via-[#13bde4] to-[#209dff] bg-clip-text text-transparent  ">
+                    Study With Shepon Sir
                   </span>
                 </div>
               </div>
@@ -154,7 +154,6 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                   <div className="mt-4 text-xl">
                     {user?<>
                   <div className="hover:text-blue-400">
-                    <p onClick={handelLogout}>Logout</p>
                     </div>
                     </>
                   :
@@ -170,7 +169,7 @@ md:border   font-semibold z-50 left-0 w-full md:w-[90px] md:relative p-2   md:bg
                     {user ? (
                       < >
                         <div className="flex gap-3 ">
-                        <div className="pt-3 text-center">{user?.displayName}</div>
+                        <div className="pt-3 text-center"><a href="/profile">{user?.displayName}</a></div>
                         <div className="pt-2"><img className="w-10 h-10 rounded-full  border border-black" src={user?.photoURL} alt="" /></div>
                         </div>
                         

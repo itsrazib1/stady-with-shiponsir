@@ -45,9 +45,17 @@ console.log("usersx",task)
           (<>
             <div className="bg-secondary/10 px-2 lg:px-5 rounded-md p-5">
               <h1
-                className={`text-lg font-semibold mb-3 ${task.priority === 'Accounting' ? 'text-red-500' : ' '
-                  }${task.priority === 'Finance' ? 'text-green-500' : ' '
-                  }`}
+                className={`text-lg font-semibold mb-3 
+                ${task.priority === 'Accounting' ? 'text-red-500' : ' '
+                  }
+                  ${task.priority === 'Finance' ? 'text-green-500' : ' '
+                  }
+                  ${task.priority === 'Business Mathematics' ? 'text-green-500' : ' '
+                }
+                ${task.priority === 'Business Statistics' ? 'text-blue-500' : ' '
+                }
+                ${task.priority === 'Intermediate Accounting' ? 'text-red-500' : ' '
+              }`}
               >
                 Today Class is {task?.className}
               </h1>

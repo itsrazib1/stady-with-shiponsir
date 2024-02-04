@@ -38,7 +38,7 @@ const Register = () => {
 
           const imgUrl = imgBbResponse.data.data.url;
 
-          const user = await createUser(email, password, name, imgUrl);
+          const user = await createUser(email, password, name, imgUrl,phoneNumber);
 
           const saveUser = {
               name,

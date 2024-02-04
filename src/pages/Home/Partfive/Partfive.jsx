@@ -39,7 +39,7 @@ const Partfive = () => {
 
                             <div className=" items-center ">
                                 <h2 className="card-title">Premium Plan</h2>
-                                <h1 className="py-5"><span className="text-6xl font-bold">$500</span><span className="font-semibold text-xl">/Per Month</span></h1>
+                                <h1 className="py-5"><span className="text-6xl font-bold">800</span><span className="font-semibold text-xl">/Per Month</span></h1>
 
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Lorem ipsum dolor sit amet ac</div></p>
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Phasellus eget etiam maecenas vel</div></p>
@@ -58,7 +58,7 @@ const Partfive = () => {
 
                             <div className=" items-center ">
                                 <h2 className="card-title">Advance Plan</h2>
-                                <h1 className="py-5"><span className="text-6xl font-bold">$500</span><span className="font-semibold text-xl">/Per Month</span></h1>
+                                <h1 className="py-5"><span className="text-6xl font-bold">1000</span><span className="font-semibold text-xl">/Per Month</span></h1>
 
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Lorem ipsum dolor sit amet ac</div></p>
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Phasellus eget etiam maecenas vel</div></p>
@@ -78,7 +78,7 @@ const Partfive = () => {
 
                             <div className=" items-center ">
                                 <h2 className="card-title">Premium Plan 2</h2>
-                                <h1 className="py-5"><span className="text-6xl font-bold">$500</span><span className="font-semibold text-xl">/Per Month</span></h1>
+                                <h1 className="py-5"><span className="text-6xl font-bold">1200</span><span className="font-semibold text-xl">/Per Month</span></h1>
 
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Lorem ipsum dolor sit amet ac</div></p>
                                 <p className="flex py-3"> <div><img className="w-5 pe-2 pt-2" src={img3} alt="" /></div> <div>Phasellus eget etiam maecenas vel</div></p>
